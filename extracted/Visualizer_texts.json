@@ -1,0 +1,532 @@
+[
+  {
+    "cell": 1,
+    "source_snippet": "from config import *\nprint('current seed:', seed)\nprint(path_base)\n# from databuilder_v2 import BaseDataBuilder\nfrom databuilder_v3 import BaseDataBuilder\nfrom collections import namedtuple\nfrom sklea",
+    "text": "current seed: 0\nC:\\_Sync_Study\\Grad_Lab\\VeReMi\\VeReMi-tweak_v8\n"
+  },
+  {
+    "cell": 6,
+    "source_snippet": "visualize()",
+    "text": "<Figure size 1296x720 with 0 Axes>"
+  },
+  {
+    "cell": 6,
+    "source_snippet": "visualize()",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 6,
+    "source_snippet": "visualize()",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 6,
+    "source_snippet": "visualize()",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 6,
+    "source_snippet": "visualize()",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 6,
+    "source_snippet": "visualize()",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 6,
+    "source_snippet": "visualize()",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 6,
+    "source_snippet": "visualize()",
+    "text": "<Figure size 1296x720 with 0 Axes>"
+  },
+  {
+    "cell": 6,
+    "source_snippet": "visualize()",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 6,
+    "source_snippet": "visualize()",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 6,
+    "source_snippet": "visualize()",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 6,
+    "source_snippet": "visualize()",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 6,
+    "source_snippet": "visualize()",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 6,
+    "source_snippet": "visualize()",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 8,
+    "source_snippet": "feature_set=1\n\n# set width of bar\nbarWidth = 0.35\n\n#FEATURE SET 1\nif feature_set==1:\n    df=pd.DataFrame(dict(\n        # Model=[val acc, test acc] #val:A+B, test:C+D\n        KNN=[.944, .924],\n        ",
+    "text": "<Figure size 1600x1200 with 1 Axes>"
+  },
+  {
+    "cell": 11,
+    "source_snippet": "# set width of bar\nbarWidth = 0.35\n\ndf=pd.DataFrame(dict(\n    # Model=[val acc, test acc] #val:A+B, test:C+D\n    KNN=[.924, .971],\n    SVM=[.633, .947],\n    RF=[.940, .988],\n    XGB=[.945, .988],\n    ",
+    "text": "<Figure size 1600x1200 with 1 Axes>"
+  },
+  {
+    "cell": 12,
+    "source_snippet": "#RF Feature importance\n\n''' Set 1 (Basic)\n       L1x       L1y  L1z       L2x      L2y  L2z       V1x      V1y  V1z  \\\n0  0.088503  0.117046  0.0  0.237986  0.34034  0.0  0.053378  0.05572  0.0   \n\n  ",
+    "text": "      $d^t$   $D_y^t$   $D_x^t$  $\\kappa^t$   $c_y^t$   $c_x^t$  $c_y^{t-1}$  \\\n0  0.403179  0.160917  0.157352    0.149079  0.038817  0.028184     0.014409   \n\n    $v_x^t$  $c_x^{t-1}$   $v_y^t$  $v_x^{t-1}$  $v_y^{t-1}$  \n0  0.013122     0.009953  0.009668     0.007886     0.007434  \n"
+  },
+  {
+    "cell": 12,
+    "source_snippet": "#RF Feature importance\n\n''' Set 1 (Basic)\n       L1x       L1y  L1z       L2x      L2y  L2z       V1x      V1y  V1z  \\\n0  0.088503  0.117046  0.0  0.237986  0.34034  0.0  0.053378  0.05572  0.0   \n\n  ",
+    "text": "<Figure size 800x800 with 1 Axes>"
+  },
+  {
+    "cell": 13,
+    "source_snippet": "df",
+    "text": "        L1x      L1y  L1z       L2x      L2y  L2z       V1x       V1y  V1z  \\\n0  0.010723  0.01305  0.0  0.028807  0.04383  0.0  0.010603  0.008331  0.0   \n\n        V2x       V2y  V2z   Ldiff1x   Ldiff1y  Ldiff1z    Udiff1  Tdiff1  \\\n0  0.015301  0.012665  0.0  0.155447  0.158486      0.0  0.403318     0.0   \n\n        MPC  \n0  0.139438  "
+  },
+  {
+    "cell": 16,
+    "source_snippet": "params.update({'F1_E_AT2':params['F1_E_AT1'],\n               'F1_C_AT1':params['F1_E_AT1'],\n               'F1_C_AT2':params['F1_E_AT1']})\nparams.keys()",
+    "text": "dict_keys(['F1_E_AT1', 'F1_E_AT2', 'F1_C_AT1', 'F1_C_AT2'])"
+  },
+  {
+    "cell": 17,
+    "source_snippet": "params.update({\n    'F1_E_AT4':\n    [(7000.0,2000.0,3500.0,7000.0)],\n    'F1_E_AT8':\n    [\n    (-100.0, 100.0),\n    (-200.0, 200.0),\n    (-300.0, 300.0),\n    (-400.0, 400.0),\n    (-500.0, 500.0),\n    ",
+    "text": "dict_keys(['F1_E_AT1', 'F1_E_AT2', 'F1_C_AT1', 'F1_C_AT2', 'F1_E_AT4', 'F1_E_AT8'])"
+  },
+  {
+    "cell": 18,
+    "source_snippet": "params.update({'F1_C_AT4':params['F1_E_AT4'],\n               'F1_C_AT8':params['F1_E_AT8'],\n               })\nparams.keys()",
+    "text": "dict_keys(['F1_E_AT1', 'F1_E_AT2', 'F1_C_AT1', 'F1_C_AT2', 'F1_E_AT4', 'F1_E_AT8', 'F1_C_AT4', 'F1_C_AT8'])"
+  },
+  {
+    "cell": 22,
+    "source_snippet": "values_F4_AT1_VAE",
+    "text": "         0\n0    0.995\n1    0.995\n2    0.995\n3    0.995\n4    0.995\n..     ...\n164  0.995\n165  1.000\n166  1.000\n167  1.000\n168  0.995\n\n[169 rows x 1 columns]"
+  },
+  {
+    "cell": 29,
+    "source_snippet": "print(get_quantile(values_F4_AT1_PAE_95, [0.10, 0.25, 0.50, 0.75, 0.90]))\nprint()\nprint(get_quantile(values_F4_AT1_PAE_96, [0.10, 0.25, 0.50, 0.75, 0.90]))\nprint()\nprint(get_quantile(values_F4_AT1_PAE",
+    "text": "[0.995, 0.995, 1.0, 1.0, 1.0, 0.99731]\n\n[0.995, 0.995, 1.0, 1.0, 1.0, 0.99731]\n\n[0.995, 0.995, 1.0, 1.0, 1.0, 0.99731]\n\n[0.995, 0.995, 1.0, 1.0, 1.0, 0.99731]\n\n[0.995, 0.995, 1.0, 1.0, 1.0, 0.99731]\n\n---\n[0.946, 1.0, 1.0, 1.0, 1.0, 0.98549]\n\n[0.946, 1.0, 1.0, 1.0, 1.0, 0.98564]\n\n[0.946, 1.0, 1.0, 1.0, 1.0, 0.98565]\n\n[0.946, 1.0, 1.0, 1.0, 1.0, 0.98565]\n\n[0.946, 1.0, 1.0, 1.0, 1.0, 0.98565]\n\n---\n[0.995, 0.995, 1.0, 1.0, 1.0, 0.99825]\n\n[0.995, 0.995, 1.0, 1.0, 1.0, 0.99825]\n\n[0.995, 0.995, 1.0, 1.0, 1.0, 0.99825]\n\n[0.995, 0.995, 1.0, 1.0, 1.0, 0.99825]\n\n[0.995, 0.995, 1.0, 1.0, 1.0, 0.99825]\n\n---\n[1.0, 1.0, 1.0, 1.0, 1.0, 0.99987]\n\n[1.0, 1.0, 1.0, 1.0, 1.0, 0.99999]\n\n[1.0, 1.0, 1.0, 1.0, 1.0, 1.0]\n\n[1.0, 1.0, 1.0, 1.0, 1.0, 1.0]\n\n[1.0, 1.0, 1.0, 1.0, 1.0, 1.0]\n\n---\n[0.995, 0.995, 1.0, 1.0, 1.0, 0.99814]\n\n[0.995, 0.995, 1.0, 1.0, 1.0, 0.99814]\n\n[0.995, 0.995, 1.0, 1.0, 1.0, 0.99814]\n\n[0.995, 0.995, 1.0, 1.0, 1.0, 0.99814]\n\n[0.995, 0.995, 1.0, 1.0, 1.0, 0.99814]\n\n---\n[1.0, 1.0, 1.0, 1.0, 1.0, 0.99884]\n\n[1.0, 1.0, 1.0, 1.0, 1.0, 0.999]\n\n[1.0, 1.0, 1.0, 1.0, 1.0, 0.99923]\n\n[1.0, 1.0, 1.0, 1.0, 1.0, 0.9996]\n\n[1.0, 1.0, 1.0, 1.0, 1.0, 0.99976]\n\n---\n"
+  },
+  {
+    "cell": 32,
+    "source_snippet": "get_heatmap(values_F1_AT1_KNN)",
+    "text": "<Figure size 1500x1500 with 1 Axes>"
+  },
+  {
+    "cell": 34,
+    "source_snippet": "get_heatmap(values_F1_AT1_SVM)",
+    "text": "<Figure size 1500x1500 with 1 Axes>"
+  },
+  {
+    "cell": 36,
+    "source_snippet": "get_heatmap(values_F1_AT1_RF)",
+    "text": "<Figure size 1500x1500 with 1 Axes>"
+  },
+  {
+    "cell": 38,
+    "source_snippet": "get_heatmap(values_F1_AT1_XGB)",
+    "text": "<Figure size 1500x1500 with 1 Axes>"
+  },
+  {
+    "cell": 40,
+    "source_snippet": "get_heatmap(values_F1_AT1_MLP)",
+    "text": "<Figure size 1500x1500 with 1 Axes>"
+  },
+  {
+    "cell": 42,
+    "source_snippet": "get_heatmap(values_F1_AT2_KNN)",
+    "text": "<Figure size 1500x1500 with 1 Axes>"
+  },
+  {
+    "cell": 44,
+    "source_snippet": "get_heatmap(values_F1_AT2_SVM)",
+    "text": "<Figure size 1500x1500 with 1 Axes>"
+  },
+  {
+    "cell": 46,
+    "source_snippet": "get_heatmap(values_F1_AT2_RF)",
+    "text": "<Figure size 1500x1500 with 1 Axes>"
+  },
+  {
+    "cell": 48,
+    "source_snippet": "get_heatmap(values_F1_AT2_XGB)",
+    "text": "<Figure size 1500x1500 with 1 Axes>"
+  },
+  {
+    "cell": 50,
+    "source_snippet": "get_heatmap(values_F1_AT2_MLP)",
+    "text": "<Figure size 1500x1500 with 1 Axes>"
+  },
+  {
+    "cell": 53,
+    "source_snippet": "get_heatmap(values_F4_AT1_KNN)",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 55,
+    "source_snippet": "get_heatmap(values_F4_AT1_SVM)",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 57,
+    "source_snippet": "get_heatmap(values_F4_AT1_RF)",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 59,
+    "source_snippet": "get_heatmap(values_F4_AT1_XGB)",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 61,
+    "source_snippet": "get_heatmap(values_F4_AT1_MLP)",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 63,
+    "source_snippet": "get_heatmap(values_F4_AT1_PAE_95)",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 64,
+    "source_snippet": "get_heatmap(values_F4_AT1_PAE_96)",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 65,
+    "source_snippet": "get_heatmap(values_F4_AT1_PAE_97)",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 66,
+    "source_snippet": "get_heatmap(values_F4_AT1_PAE_98)",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 67,
+    "source_snippet": "get_heatmap(values_F4_AT1_PAE_99)",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 69,
+    "source_snippet": "get_heatmap(values_F4_AT1_VAE_95)",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 70,
+    "source_snippet": "get_heatmap(values_F4_AT1_VAE_96)",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 71,
+    "source_snippet": "get_heatmap(values_F4_AT1_VAE_97)",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 72,
+    "source_snippet": "get_heatmap(values_F4_AT1_VAE_98)",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 73,
+    "source_snippet": "get_heatmap(values_F4_AT1_VAE_99)",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 75,
+    "source_snippet": "get_heatmap(values_F4_AT1_CAE1D_95)",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 76,
+    "source_snippet": "get_heatmap(values_F4_AT1_CAE1D_96)",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 77,
+    "source_snippet": "get_heatmap(values_F4_AT1_CAE1D_97)",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 78,
+    "source_snippet": "get_heatmap(values_F4_AT1_CAE1D_98)",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 79,
+    "source_snippet": "get_heatmap(values_F4_AT1_CAE1D_99)",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 81,
+    "source_snippet": "get_heatmap(values_F4_AT2_KNN)",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 83,
+    "source_snippet": "get_heatmap(values_F4_AT2_SVM)",
+    "text": "<Figure size 1500x1500 with 1 Axes>"
+  },
+  {
+    "cell": 85,
+    "source_snippet": "get_heatmap(values_F4_AT2_RF)",
+    "text": "<Figure size 1500x1500 with 1 Axes>"
+  },
+  {
+    "cell": 87,
+    "source_snippet": "get_heatmap(values_F4_AT2_XGB)",
+    "text": "<Figure size 1500x1500 with 1 Axes>"
+  },
+  {
+    "cell": 89,
+    "source_snippet": "get_heatmap(values_F4_AT2_MLP)",
+    "text": "<Figure size 1500x1500 with 1 Axes>"
+  },
+  {
+    "cell": 90,
+    "source_snippet": "get_heatmap(values_F4_AT2_MLP)",
+    "text": "<Figure size 1500x1500 with 1 Axes>"
+  },
+  {
+    "cell": 92,
+    "source_snippet": "get_heatmap(values_F4_AT2_PAE_95)",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 93,
+    "source_snippet": "get_heatmap(values_F4_AT2_PAE_96)",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 94,
+    "source_snippet": "get_heatmap(values_F4_AT2_PAE_97)",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 95,
+    "source_snippet": "get_heatmap(values_F4_AT2_PAE_98)",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 96,
+    "source_snippet": "get_heatmap(values_F4_AT2_PAE_99)",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 98,
+    "source_snippet": "get_heatmap(values_F4_AT2_VAE_95)",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 99,
+    "source_snippet": "get_heatmap(values_F4_AT2_VAE_96)",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 100,
+    "source_snippet": "get_heatmap(values_F4_AT2_VAE_97)",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 101,
+    "source_snippet": "get_heatmap(values_F4_AT2_VAE_98)",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 102,
+    "source_snippet": "get_heatmap(values_F4_AT2_VAE_99)",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 104,
+    "source_snippet": "get_heatmap(values_F4_AT2_CAE1D_95)",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 105,
+    "source_snippet": "get_heatmap(values_F4_AT2_CAE1D_96)",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 106,
+    "source_snippet": "get_heatmap(values_F4_AT2_CAE1D_97)",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 107,
+    "source_snippet": "get_heatmap(values_F4_AT2_CAE1D_98)",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 108,
+    "source_snippet": "get_heatmap(values_F4_AT2_CAE1D_99)",
+    "text": "<Figure size 500x500 with 1 Axes>"
+  },
+  {
+    "cell": 111,
+    "source_snippet": "'manualy parsing the results... you can just ignore'\nimport pandas as pd\nimport numpy as np\nwith open(r'C:\\Users\\tpxdk\\Downloads\\message.txt') as f:\n    lines=f.readlines()\n\nparsed_lines=[]\nfor line i",
+    "text": "0.998, 1.000, 1.000, 0.930\n"
+  },
+  {
+    "cell": 112,
+    "source_snippet": "'manualy parsing the results... you can just ignore'\nimport pandas as pd\nimport numpy as np\nwith open(r'C:\\Users\\tpxdk\\Downloads\\MLP_T1.txt') as f:\n    lines=f.readlines()\n\nparsed_lines=[]\nfor line in",
+    "text": "0.985, 1.000, 0.955, 1.000\n"
+  },
+  {
+    "cell": 113,
+    "source_snippet": "with open(r'C:\\_Sync_Study\\Grad_Lab\\VeReMi\\VeReMi-tweak_v8\\result\\F4_E_AT1_kNN.txt') as f:\n    lines=f.readlines()\nparsed_lines=[]\nfor line in lines[1:]:\n    parsed_lines.append(float(line.replace('\\n",
+    "text": "0.982 0.829 1.000 0.666\n"
+  },
+  {
+    "cell": 114,
+    "source_snippet": "with open(r'C:\\_Sync_Study\\Grad_Lab\\VeReMi\\VeReMi-tweak_v8\\result\\F4_E_AT1_SVM.txt') as f:\n    lines=f.readlines()\nparsed_lines=[]\nfor line in lines[1:]:\n    parsed_lines.append(float(line.replace('\\n",
+    "text": "0.961 0.629 0.995 0.532\n"
+  },
+  {
+    "cell": 115,
+    "source_snippet": "with open(r'C:\\_Sync_Study\\Grad_Lab\\VeReMi\\VeReMi-tweak_v8\\result\\F4_E_AT1_RF.txt') as f:\n    lines=f.readlines()\nparsed_lines=[]\nfor line in lines[1:]:\n    parsed_lines.append(float(line.replace('\\n'",
+    "text": "0.999 0.991 1.000 0.974\n"
+  },
+  {
+    "cell": 116,
+    "source_snippet": "with open(r'C:\\_Sync_Study\\Grad_Lab\\VeReMi\\VeReMi-tweak_v8\\result\\F4_E_AT1_XGB.txt') as f:\n    lines=f.readlines()\nparsed_lines=[]\nfor line in lines[1:]:\n    parsed_lines.append(float(line.replace('\\n",
+    "text": "0.999 0.991 1.000 0.978\n"
+  },
+  {
+    "cell": 130,
+    "source_snippet": "print(key)\nresult=dict_result[key]\nloss=dict_loss[key]\nepochs=[int(_.replace('\\n', '').replace('epoch: ', '')) for _ in result if 'epoch' in _]\n# epochs\nthres=[_.replace('\\n', '').replace('thres:', ''",
+    "text": "F1_b0_5\n"
+  },
+  {
+    "cell": 130,
+    "source_snippet": "print(key)\nresult=dict_result[key]\nloss=dict_loss[key]\nepochs=[int(_.replace('\\n', '').replace('epoch: ', '')) for _ in result if 'epoch' in _]\n# epochs\nthres=[_.replace('\\n', '').replace('thres:', ''",
+    "text": "<AxesSubplot:>"
+  },
+  {
+    "cell": 130,
+    "source_snippet": "print(key)\nresult=dict_result[key]\nloss=dict_loss[key]\nepochs=[int(_.replace('\\n', '').replace('epoch: ', '')) for _ in result if 'epoch' in _]\n# epochs\nthres=[_.replace('\\n', '').replace('thres:', ''",
+    "text": "<Figure size 432x288 with 1 Axes>"
+  },
+  {
+    "cell": 131,
+    "source_snippet": "print(key, bound)\ndf=df_test_acc.iloc[:bound//100]\nprint('max acc:',\n      np.max(df['0.95'].values), \n      np.max(df['0.96'].values),\n      np.max(df['0.97'].values),\n      np.max(df['0.98'].values)",
+    "text": "F1_b0_5 10000\nmax acc: 0.9745 0.979 0.984 0.986 0.9875 0.9875 0.988\n\nmin loss: 3372.63037109375\nepoch: 3000\n"
+  },
+  {
+    "cell": 131,
+    "source_snippet": "print(key, bound)\ndf=df_test_acc.iloc[:bound//100]\nprint('max acc:',\n      np.max(df['0.95'].values), \n      np.max(df['0.96'].values),\n      np.max(df['0.97'].values),\n      np.max(df['0.98'].values)",
+    "text": "loss     3372.630371\n0.95        0.735000\n0.96        0.742500\n0.97        0.747500\n0.98        0.756000\n0.99        0.759000\n0.999       0.759000\n1.00        0.596500\nName: 3100, dtype: float64"
+  },
+  {
+    "cell": 140,
+    "source_snippet": "values_F4_AT1_SVM",
+    "text": "       SVM      x      y\n0    0.920 -300.0 -300.0\n1    0.915 -300.0 -250.0\n2    0.910 -300.0 -200.0\n3    0.915 -300.0 -150.0\n4    0.925 -300.0 -100.0\n..     ...    ...    ...\n164  0.915  300.0  100.0\n165  0.980  300.0  150.0\n166  0.995  300.0  200.0\n167  1.000  300.0  250.0\n168  1.000  300.0  300.0\n\n[169 rows x 3 columns]"
+  },
+  {
+    "cell": 141,
+    "source_snippet": "import numpy as np\nimport matplotlib.pyplot as plt\n\ndef main():\n    data = [[np.random.normal(i, 1, 30) for i in range(2)],\n            [np.random.normal(i, 1.5, 30) for i in range(3)],\n            [n",
+    "text": "[array([-0.47560541,  0.19347263, -0.47451308, -0.34662674,  1.02031526,\n       -0.85782902, -0.90581602, -0.61431351,  0.9025161 , -0.18332638,\n       -1.21091581,  0.56203264,  1.155307  , -1.17820991, -0.97799059,\n       -0.57074867, -0.48456779, -0.95141508, -0.19763592,  0.76883637,\n        1.79349704, -1.04545763, -0.19938504,  0.3677575 ,  1.547352  ,\n        1.16267438, -0.0324698 ,  0.70098804,  1.99531226, -0.65198876]), array([ 1.08371204,  3.30857436,  0.63707841,  0.56442232,  2.36073817,\n        0.89276487,  0.08288743,  1.0437084 ,  2.25999393,  1.62114675,\n        1.5564571 , -0.44511609,  1.09966791, -0.23662561,  0.30294859,\n        0.53939793, -0.32383555,  2.17540576, -0.54865419,  2.33693382,\n        1.41821122,  4.07008497,  0.73836206,  0.79982866,  1.46208633,\n        1.07280931,  0.02203087,  0.50449338,  1.37385052,  0.44056814])]\n[0.88125 1.11875]\n[array([ 0.92820213,  3.10046766, -1.41809621, -1.96147265, -1.96598522,\n       -2.28956422, -0.84132357, -0.72083455, -1.0484453 ,  0.73125489,\n        1.56051018,  1.70687327, -0.48554408, -0.58496757,  0.69953444,\n        0.69564311, -1.94441979, -1.62010717, -1.97256506,  1.47327076,\n        1.70933304, -0.28100639,  1.16336916, -1.11901243,  0.80674587,\n        0.97563595, -0.73974124,  3.29009849, -1.16294478,  0.23086686]), array([ 0.35329958,  0.18446335,  1.80459494, -0.98785221, -0.11898555,\n       -2.58445245, -0.08716353,  1.43757017,  0.5261197 ,  3.16424494,\n       -0.93770964,  0.20166397,  0.9081257 , -1.20131979,  3.89789257,\n        3.06829289,  0.73857607,  0.79746278,  1.20675908,  2.34754282,\n        0.90828301,  1.86917025,  0.05026563, -0.02603667, -2.54298527,\n       -0.40298319,  3.37662101, -0.96707408,  4.100966  ,  0.49421813]), array([ 1.39520672,  3.398288  ,  3.97603401,  2.11310138,  4.43907472,\n        1.51616502,  2.58736244,  1.31374568,  1.59391232, -0.39881801,\n        2.86917436,  4.55874912,  1.54448933,  5.07836091,  3.38825979,\n        2.61692955,  1.45942295, -0.27781044,  2.39484831,  0.22779686,\n        2.85636449,  1.27326946,  2.26108908,  3.20000119,  2.54469288,\n        1.69303773,  0.66288539,  2.43558308,  0.46268276,  2.60997309])]\n[1.7625 2.     2.2375]\n[array([-1.64074113,  0.38785141, -0.33841328, -4.00674277,  2.05319539,\n       -1.43984561, -0.5289975 ,  0.38957525,  0.11499791,  0.75525325,\n       -4.14385834,  0.87389   ,  3.75230119, -0.94248952,  2.58370245,\n        1.78427778,  3.03173696, -2.32003999, -0.11843577,  2.0154575 ,\n       -4.60427994,  2.79273896, -0.62697818,  1.29935916,  1.33662775,\n       -0.67478416,  3.97468953, -1.98490251,  2.25657148,  0.49504995]), array([-2.61598805,  1.46242785, -2.27195266, -2.6942449 ,  1.32251514,\n        3.03327531, -1.5507071 , -0.06871955,  1.94555959,  2.54726858,\n        4.33381578,  0.33988367,  2.8287949 ,  7.1210017 ,  0.44482142,\n        3.19923603,  2.26798433,  2.20845005, -4.25818864,  4.71247275,\n       -1.48323884,  3.8563909 , -0.55761003,  0.63654097,  0.07104504,\n       -0.4070114 ,  3.88553883,  1.57297722,  6.83690274, -0.78966536]), array([ 3.58799462,  1.37434282,  0.92633786, -0.5220422 ,  2.65318602,\n        2.52505928,  2.54173328,  4.98702216,  0.42865613, -0.69024247,\n        3.08755662,  1.79583295,  0.64923278,  1.2610981 ,  1.4850262 ,\n        1.90079591, -0.73539866,  1.97957312,  2.07129804,  3.37616434,\n        4.610291  ,  3.77205872,  1.38891346,  2.4590432 ,  4.50752482,\n        1.66721561,  2.34779846, -0.21583961,  1.12170101,  3.22254778]), array([ 3.32804009,  4.24375369,  4.14431147,  6.98859011,  4.51602882,\n        3.27114764,  1.41188974,  3.89278114,  1.6536475 , -0.45185741,\n        5.37516801,  1.2044922 ,  4.33579335,  0.69555206,  0.5851082 ,\n        5.12093637, -0.06649777,  2.38447612,  1.62816245,  0.59364954,\n        4.99057962,  3.44677986,  1.54066101,  2.70215849,  3.11934732,\n        5.4756259 ,  5.30580056,  2.61039545,  3.74357777,  4.01528354])]\n[2.64375 2.88125 3.11875 3.35625]\n"
+  },
+  {
+    "cell": 141,
+    "source_snippet": "import numpy as np\nimport matplotlib.pyplot as plt\n\ndef main():\n    data = [[np.random.normal(i, 1, 30) for i in range(2)],\n            [np.random.normal(i, 1.5, 30) for i in range(3)],\n            [n",
+    "text": "<Figure size 432x288 with 1 Axes>"
+  },
+  {
+    "cell": 142,
+    "source_snippet": "values_F1_AT1_KNN",
+    "text": "       kNN      x      y\n0    0.890 -300.0 -300.0\n1    0.885 -300.0 -250.0\n2    0.885 -300.0 -200.0\n3    0.950 -300.0 -150.0\n4    0.955 -300.0 -100.0\n..     ...    ...    ...\n164  0.975  300.0  100.0\n165  0.995  300.0  150.0\n166  0.995  300.0  200.0\n167  1.000  300.0  250.0\n168  1.000  300.0  300.0\n\n[169 rows x 3 columns]"
+  },
+  {
+    "cell": 143,
+    "source_snippet": "values_F1_AT1_RF['RF'].value_counts()",
+    "text": "1.000    89\n0.995    23\n0.945     8\n0.955     8\n0.950     7\n0.965     5\n0.940     5\n0.935     4\n0.930     3\n0.920     3\n0.895     2\n0.960     2\n0.905     2\n0.975     2\n0.880     1\n0.925     1\n0.890     1\n0.900     1\n0.915     1\n0.910     1\nName: RF, dtype: int64"
+  },
+  {
+    "cell": 144,
+    "source_snippet": "values_F4_AT1_RF['RF'].value_counts()",
+    "text": "1.000    138\n0.995     21\n0.990      7\n0.985      1\n0.980      1\n0.975      1\nName: RF, dtype: int64"
+  },
+  {
+    "cell": 145,
+    "source_snippet": "import numpy as np\nimport matplotlib.pyplot as plt\n\ndef main():\n    data = [[values_F1_AT1_KNN.iloc[:, 0],\n            values_F4_AT1_KNN.iloc[:, 0]],\n            # [values_F1_AT1_SVM.iloc[:, 0],\n     ",
+    "text": "{'patch_artist': True, 'notch': False, 'widths': 0.425, 'showfliers': True}\n"
+  },
+  {
+    "cell": 145,
+    "source_snippet": "import numpy as np\nimport matplotlib.pyplot as plt\n\ndef main():\n    data = [[values_F1_AT1_KNN.iloc[:, 0],\n            values_F4_AT1_KNN.iloc[:, 0]],\n            # [values_F1_AT1_SVM.iloc[:, 0],\n     ",
+    "text": "<Figure size 1200x1200 with 1 Axes>"
+  },
+  {
+    "cell": 146,
+    "source_snippet": "import matplotlib.pyplot as plt\nimport numpy as np\n# https://matplotlib.org/3.1.0/gallery/subplots_axes_and_figures/broken_axis.html\n\n# 30 points between [0, 0.2) originally made using np.random.rand(",
+    "text": "<Figure size 432x288 with 2 Axes>"
+  },
+  {
+    "cell": 147,
+    "source_snippet": "import numpy as np\nimport matplotlib.pyplot as plt\n\ndef main():\n    data = [[values_F1_AT1_KNN.iloc[:, 0],\n            values_F4_AT1_KNN.iloc[:, 0]],\n            [values_F1_AT1_SVM.iloc[:, 0],\n       ",
+    "text": "<Figure size 1200x1200 with 2 Axes>"
+  },
+  {
+    "cell": 148,
+    "source_snippet": "values_F4_AT1_KNN.iloc[:, 0]",
+    "text": "0      0.955\n1      0.960\n2      0.940\n3      0.940\n4      0.945\n       ...  \n164    0.995\n165    0.995\n166    1.000\n167    1.000\n168    1.000\nName: kNN, Length: 169, dtype: float64"
+  },
+  {
+    "cell": 150,
+    "source_snippet": "import pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# set width of bar\nbarWidth = 0.2\n\ndf=pd.DataFrame(dict(\n    # Model=[val acc, test acc] #val:A+B, test:C+D\n    KNN=[.982, .829,",
+    "text": "<Figure size 1600x1200 with 1 Axes>"
+  },
+  {
+    "cell": 151,
+    "source_snippet": "import pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport plotinpy as pnp\n\n# set width of bar\nbarWidth = 0.4\n\ndf=pd.DataFrame(dict(\n    # Model=[val acc, test acc] #val:A+B, test:C",
+    "text": "<Figure size 1600x1200 with 1 Axes>"
+  },
+  {
+    "cell": 155,
+    "source_snippet": "plt.figure()\nplot_bars_with_breaks(\n    [1, 2, 30, 1000],\n    [(15, 25), (50, 975)],\n    style=\"~^~-\",\n    # break_args={\"linestyle\": '--',\n    #             'lw':1,\n    #             'hatch':None}\n  ",
+    "text": "C:\\Users\\tpxdk\\AppData\\Local\\Temp/ipykernel_9792/2361582501.py:3: DeprecationWarning: Deprecated since Python 3.4. Use importlib.util.find_spec() instead.\n  pandas_loader = importlib.find_loader('pandas')\n"
+  },
+  {
+    "cell": 155,
+    "source_snippet": "plt.figure()\nplot_bars_with_breaks(\n    [1, 2, 30, 1000],\n    [(15, 25), (50, 975)],\n    style=\"~^~-\",\n    # break_args={\"linestyle\": '--',\n    #             'lw':1,\n    #             'hatch':None}\n  ",
+    "text": "{'figure': <Figure size 432x288 with 3 Axes>,\n 'axes': [<AxesSubplot:>, <AxesSubplot:>, <AxesSubplot:>]}"
+  },
+  {
+    "cell": 155,
+    "source_snippet": "plt.figure()\nplot_bars_with_breaks(\n    [1, 2, 30, 1000],\n    [(15, 25), (50, 975)],\n    style=\"~^~-\",\n    # break_args={\"linestyle\": '--',\n    #             'lw':1,\n    #             'hatch':None}\n  ",
+    "text": "<Figure size 432x288 with 3 Axes>"
+  },
+  {
+    "cell": 156,
+    "source_snippet": "import pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# set width of bar\nbarWidth = 0.4\n\ndf=pd.DataFrame(dict(\n    # Model=[val acc, test acc] #val:A+B, test:C+D\n    KNN=[.982, .829,",
+    "text": "     KNN    SVM     RF    XGB    MLP    PAE    VAE    CAE\n0  0.982  0.961  0.999  0.999  0.985  0.997  0.998  0.998\n1  0.829  0.629  0.991  0.991  1.000  0.985  1.000  1.000\n2  1.000  0.995  1.000  1.000  0.995  1.000  1.000  1.000\n3  0.666  0.532  0.974  0.978  1.000  0.910  0.930  1.000\nKNN    0.982\nSVM    0.961\nRF     0.999\nXGB    0.999\nMLP    0.985\nPAE    0.997\nVAE    0.998\nCAE    0.998\nName: 0, dtype: float64\n"
+  },
+  {
+    "cell": 156,
+    "source_snippet": "import pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# set width of bar\nbarWidth = 0.4\n\ndf=pd.DataFrame(dict(\n    # Model=[val acc, test acc] #val:A+B, test:C+D\n    KNN=[.982, .829,",
+    "text": "<Figure size 576x432 with 2 Axes>"
+  },
+  {
+    "cell": 157,
+    "source_snippet": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nXX = pd.Series([200,1300,100,1400],index=['x1','x2','x3','x4'])\nfig, (ax1,ax2) = plt.subplots(2,1,sharex=True,\n                 ",
+    "text": "<Figure size 360x432 with 2 Axes>"
+  }
+]

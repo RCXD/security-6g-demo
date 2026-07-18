@@ -1,0 +1,469 @@
+{
+  "Visualizer": {
+    "figures": 76,
+    "text_outputs": 106,
+    "figure_list": [
+      {
+        "index": 0,
+        "cell": 6,
+        "file": "figures/Visualizer/fig_000_cell6.png",
+        "source_snippet": "visualize()"
+      },
+      {
+        "index": 1,
+        "cell": 6,
+        "file": "figures/Visualizer/fig_001_cell6.png",
+        "source_snippet": "visualize()"
+      },
+      {
+        "index": 2,
+        "cell": 6,
+        "file": "figures/Visualizer/fig_002_cell6.png",
+        "source_snippet": "visualize()"
+      },
+      {
+        "index": 3,
+        "cell": 6,
+        "file": "figures/Visualizer/fig_003_cell6.png",
+        "source_snippet": "visualize()"
+      },
+      {
+        "index": 4,
+        "cell": 6,
+        "file": "figures/Visualizer/fig_004_cell6.png",
+        "source_snippet": "visualize()"
+      },
+      {
+        "index": 5,
+        "cell": 6,
+        "file": "figures/Visualizer/fig_005_cell6.png",
+        "source_snippet": "visualize()"
+      },
+      {
+        "index": 6,
+        "cell": 6,
+        "file": "figures/Visualizer/fig_006_cell6.png",
+        "source_snippet": "visualize()"
+      },
+      {
+        "index": 7,
+        "cell": 6,
+        "file": "figures/Visualizer/fig_007_cell6.png",
+        "source_snippet": "visualize()"
+      },
+      {
+        "index": 8,
+        "cell": 6,
+        "file": "figures/Visualizer/fig_008_cell6.png",
+        "source_snippet": "visualize()"
+      },
+      {
+        "index": 9,
+        "cell": 6,
+        "file": "figures/Visualizer/fig_009_cell6.png",
+        "source_snippet": "visualize()"
+      },
+      {
+        "index": 10,
+        "cell": 6,
+        "file": "figures/Visualizer/fig_010_cell6.png",
+        "source_snippet": "visualize()"
+      },
+      {
+        "index": 11,
+        "cell": 6,
+        "file": "figures/Visualizer/fig_011_cell6.png",
+        "source_snippet": "visualize()"
+      },
+      {
+        "index": 12,
+        "cell": 8,
+        "file": "figures/Visualizer/fig_012_cell8.png",
+        "source_snippet": "feature_set=1\n\n# set width of bar\nbarWidth = 0.35\n\n#FEATURE SET 1\nif feature_set==1:\n    df=pd.DataFrame(dict(\n        # Model=[val acc, test acc] #val:A+B, test:C+D\n        KNN=[.944, .924],\n        SVM=[.635, .633],\n        RF=[.999, .940],\n        XGB=[.987, .945],\n        MLP=[1.000, .914]\n    ))\n#FEATURE SET 2\nelif feature_set==2:\n    df=pd.DataFrame(dict(\n        # Model=[val acc, test acc] "
+      },
+      {
+        "index": 13,
+        "cell": 11,
+        "file": "figures/Visualizer/fig_013_cell11.png",
+        "source_snippet": "# set width of bar\nbarWidth = 0.35\n\ndf=pd.DataFrame(dict(\n    # Model=[val acc, test acc] #val:A+B, test:C+D\n    KNN=[.924, .971],\n    SVM=[.633, .947],\n    RF=[.940, .988],\n    XGB=[.945, .988],\n    MLP=[.914, .991]\n))\n\nbars1=df.iloc[0]\nbars2=df.iloc[1]\n# bars3=df.iloc[2]\n\n# Set position of bar on X axis\n# r1 = np.arange(0,len(bars1),1) #your original r1\nr1 = np.arange(0,len(bars1)*2,2) #r1 was r"
+      },
+      {
+        "index": 14,
+        "cell": 12,
+        "file": "figures/Visualizer/fig_014_cell12.png",
+        "source_snippet": "#RF Feature importance\n\n''' Set 1 (Basic)\n       L1x       L1y  L1z       L2x      L2y  L2z       V1x      V1y  V1z  \\\n0  0.088503  0.117046  0.0  0.237986  0.34034  0.0  0.053378  0.05572  0.0   \n\n        V2x       V2y  V2z  \n0  0.053866  0.053161  0.0  \n\n\nSet 4 (Ext2)\n        L1x      L1y  L1z       L2x      L2y  L2z       V1x       V1y  V1z  \\\n0  0.010723  0.01305  0.0  0.028807  0.04383  0.0  "
+      },
+      {
+        "index": 15,
+        "cell": 32,
+        "file": "figures/Visualizer/fig_015_cell32.png",
+        "source_snippet": "get_heatmap(values_F1_AT1_KNN)"
+      },
+      {
+        "index": 16,
+        "cell": 34,
+        "file": "figures/Visualizer/fig_016_cell34.png",
+        "source_snippet": "get_heatmap(values_F1_AT1_SVM)"
+      },
+      {
+        "index": 17,
+        "cell": 36,
+        "file": "figures/Visualizer/fig_017_cell36.png",
+        "source_snippet": "get_heatmap(values_F1_AT1_RF)"
+      },
+      {
+        "index": 18,
+        "cell": 38,
+        "file": "figures/Visualizer/fig_018_cell38.png",
+        "source_snippet": "get_heatmap(values_F1_AT1_XGB)"
+      },
+      {
+        "index": 19,
+        "cell": 40,
+        "file": "figures/Visualizer/fig_019_cell40.png",
+        "source_snippet": "get_heatmap(values_F1_AT1_MLP)"
+      },
+      {
+        "index": 20,
+        "cell": 42,
+        "file": "figures/Visualizer/fig_020_cell42.png",
+        "source_snippet": "get_heatmap(values_F1_AT2_KNN)"
+      },
+      {
+        "index": 21,
+        "cell": 44,
+        "file": "figures/Visualizer/fig_021_cell44.png",
+        "source_snippet": "get_heatmap(values_F1_AT2_SVM)"
+      },
+      {
+        "index": 22,
+        "cell": 46,
+        "file": "figures/Visualizer/fig_022_cell46.png",
+        "source_snippet": "get_heatmap(values_F1_AT2_RF)"
+      },
+      {
+        "index": 23,
+        "cell": 48,
+        "file": "figures/Visualizer/fig_023_cell48.png",
+        "source_snippet": "get_heatmap(values_F1_AT2_XGB)"
+      },
+      {
+        "index": 24,
+        "cell": 50,
+        "file": "figures/Visualizer/fig_024_cell50.png",
+        "source_snippet": "get_heatmap(values_F1_AT2_MLP)"
+      },
+      {
+        "index": 25,
+        "cell": 53,
+        "file": "figures/Visualizer/fig_025_cell53.png",
+        "source_snippet": "get_heatmap(values_F4_AT1_KNN)"
+      },
+      {
+        "index": 26,
+        "cell": 55,
+        "file": "figures/Visualizer/fig_026_cell55.png",
+        "source_snippet": "get_heatmap(values_F4_AT1_SVM)"
+      },
+      {
+        "index": 27,
+        "cell": 57,
+        "file": "figures/Visualizer/fig_027_cell57.png",
+        "source_snippet": "get_heatmap(values_F4_AT1_RF)"
+      },
+      {
+        "index": 28,
+        "cell": 59,
+        "file": "figures/Visualizer/fig_028_cell59.png",
+        "source_snippet": "get_heatmap(values_F4_AT1_XGB)"
+      },
+      {
+        "index": 29,
+        "cell": 61,
+        "file": "figures/Visualizer/fig_029_cell61.png",
+        "source_snippet": "get_heatmap(values_F4_AT1_MLP)"
+      },
+      {
+        "index": 30,
+        "cell": 63,
+        "file": "figures/Visualizer/fig_030_cell63.png",
+        "source_snippet": "get_heatmap(values_F4_AT1_PAE_95)"
+      },
+      {
+        "index": 31,
+        "cell": 64,
+        "file": "figures/Visualizer/fig_031_cell64.png",
+        "source_snippet": "get_heatmap(values_F4_AT1_PAE_96)"
+      },
+      {
+        "index": 32,
+        "cell": 65,
+        "file": "figures/Visualizer/fig_032_cell65.png",
+        "source_snippet": "get_heatmap(values_F4_AT1_PAE_97)"
+      },
+      {
+        "index": 33,
+        "cell": 66,
+        "file": "figures/Visualizer/fig_033_cell66.png",
+        "source_snippet": "get_heatmap(values_F4_AT1_PAE_98)"
+      },
+      {
+        "index": 34,
+        "cell": 67,
+        "file": "figures/Visualizer/fig_034_cell67.png",
+        "source_snippet": "get_heatmap(values_F4_AT1_PAE_99)"
+      },
+      {
+        "index": 35,
+        "cell": 69,
+        "file": "figures/Visualizer/fig_035_cell69.png",
+        "source_snippet": "get_heatmap(values_F4_AT1_VAE_95)"
+      },
+      {
+        "index": 36,
+        "cell": 70,
+        "file": "figures/Visualizer/fig_036_cell70.png",
+        "source_snippet": "get_heatmap(values_F4_AT1_VAE_96)"
+      },
+      {
+        "index": 37,
+        "cell": 71,
+        "file": "figures/Visualizer/fig_037_cell71.png",
+        "source_snippet": "get_heatmap(values_F4_AT1_VAE_97)"
+      },
+      {
+        "index": 38,
+        "cell": 72,
+        "file": "figures/Visualizer/fig_038_cell72.png",
+        "source_snippet": "get_heatmap(values_F4_AT1_VAE_98)"
+      },
+      {
+        "index": 39,
+        "cell": 73,
+        "file": "figures/Visualizer/fig_039_cell73.png",
+        "source_snippet": "get_heatmap(values_F4_AT1_VAE_99)"
+      },
+      {
+        "index": 40,
+        "cell": 75,
+        "file": "figures/Visualizer/fig_040_cell75.png",
+        "source_snippet": "get_heatmap(values_F4_AT1_CAE1D_95)"
+      },
+      {
+        "index": 41,
+        "cell": 76,
+        "file": "figures/Visualizer/fig_041_cell76.png",
+        "source_snippet": "get_heatmap(values_F4_AT1_CAE1D_96)"
+      },
+      {
+        "index": 42,
+        "cell": 77,
+        "file": "figures/Visualizer/fig_042_cell77.png",
+        "source_snippet": "get_heatmap(values_F4_AT1_CAE1D_97)"
+      },
+      {
+        "index": 43,
+        "cell": 78,
+        "file": "figures/Visualizer/fig_043_cell78.png",
+        "source_snippet": "get_heatmap(values_F4_AT1_CAE1D_98)"
+      },
+      {
+        "index": 44,
+        "cell": 79,
+        "file": "figures/Visualizer/fig_044_cell79.png",
+        "source_snippet": "get_heatmap(values_F4_AT1_CAE1D_99)"
+      },
+      {
+        "index": 45,
+        "cell": 81,
+        "file": "figures/Visualizer/fig_045_cell81.png",
+        "source_snippet": "get_heatmap(values_F4_AT2_KNN)"
+      },
+      {
+        "index": 46,
+        "cell": 83,
+        "file": "figures/Visualizer/fig_046_cell83.png",
+        "source_snippet": "get_heatmap(values_F4_AT2_SVM)"
+      },
+      {
+        "index": 47,
+        "cell": 85,
+        "file": "figures/Visualizer/fig_047_cell85.png",
+        "source_snippet": "get_heatmap(values_F4_AT2_RF)"
+      },
+      {
+        "index": 48,
+        "cell": 87,
+        "file": "figures/Visualizer/fig_048_cell87.png",
+        "source_snippet": "get_heatmap(values_F4_AT2_XGB)"
+      },
+      {
+        "index": 49,
+        "cell": 89,
+        "file": "figures/Visualizer/fig_049_cell89.png",
+        "source_snippet": "get_heatmap(values_F4_AT2_MLP)"
+      },
+      {
+        "index": 50,
+        "cell": 90,
+        "file": "figures/Visualizer/fig_050_cell90.png",
+        "source_snippet": "get_heatmap(values_F4_AT2_MLP)"
+      },
+      {
+        "index": 51,
+        "cell": 92,
+        "file": "figures/Visualizer/fig_051_cell92.png",
+        "source_snippet": "get_heatmap(values_F4_AT2_PAE_95)"
+      },
+      {
+        "index": 52,
+        "cell": 93,
+        "file": "figures/Visualizer/fig_052_cell93.png",
+        "source_snippet": "get_heatmap(values_F4_AT2_PAE_96)"
+      },
+      {
+        "index": 53,
+        "cell": 94,
+        "file": "figures/Visualizer/fig_053_cell94.png",
+        "source_snippet": "get_heatmap(values_F4_AT2_PAE_97)"
+      },
+      {
+        "index": 54,
+        "cell": 95,
+        "file": "figures/Visualizer/fig_054_cell95.png",
+        "source_snippet": "get_heatmap(values_F4_AT2_PAE_98)"
+      },
+      {
+        "index": 55,
+        "cell": 96,
+        "file": "figures/Visualizer/fig_055_cell96.png",
+        "source_snippet": "get_heatmap(values_F4_AT2_PAE_99)"
+      },
+      {
+        "index": 56,
+        "cell": 98,
+        "file": "figures/Visualizer/fig_056_cell98.png",
+        "source_snippet": "get_heatmap(values_F4_AT2_VAE_95)"
+      },
+      {
+        "index": 57,
+        "cell": 99,
+        "file": "figures/Visualizer/fig_057_cell99.png",
+        "source_snippet": "get_heatmap(values_F4_AT2_VAE_96)"
+      },
+      {
+        "index": 58,
+        "cell": 100,
+        "file": "figures/Visualizer/fig_058_cell100.png",
+        "source_snippet": "get_heatmap(values_F4_AT2_VAE_97)"
+      },
+      {
+        "index": 59,
+        "cell": 101,
+        "file": "figures/Visualizer/fig_059_cell101.png",
+        "source_snippet": "get_heatmap(values_F4_AT2_VAE_98)"
+      },
+      {
+        "index": 60,
+        "cell": 102,
+        "file": "figures/Visualizer/fig_060_cell102.png",
+        "source_snippet": "get_heatmap(values_F4_AT2_VAE_99)"
+      },
+      {
+        "index": 61,
+        "cell": 104,
+        "file": "figures/Visualizer/fig_061_cell104.png",
+        "source_snippet": "get_heatmap(values_F4_AT2_CAE1D_95)"
+      },
+      {
+        "index": 62,
+        "cell": 105,
+        "file": "figures/Visualizer/fig_062_cell105.png",
+        "source_snippet": "get_heatmap(values_F4_AT2_CAE1D_96)"
+      },
+      {
+        "index": 63,
+        "cell": 106,
+        "file": "figures/Visualizer/fig_063_cell106.png",
+        "source_snippet": "get_heatmap(values_F4_AT2_CAE1D_97)"
+      },
+      {
+        "index": 64,
+        "cell": 107,
+        "file": "figures/Visualizer/fig_064_cell107.png",
+        "source_snippet": "get_heatmap(values_F4_AT2_CAE1D_98)"
+      },
+      {
+        "index": 65,
+        "cell": 108,
+        "file": "figures/Visualizer/fig_065_cell108.png",
+        "source_snippet": "get_heatmap(values_F4_AT2_CAE1D_99)"
+      },
+      {
+        "index": 66,
+        "cell": 130,
+        "file": "figures/Visualizer/fig_066_cell130.png",
+        "source_snippet": "print(key)\nresult=dict_result[key]\nloss=dict_loss[key]\nepochs=[int(_.replace('\\n', '').replace('epoch: ', '')) for _ in result if 'epoch' in _]\n# epochs\nthres=[_.replace('\\n', '').replace('thres:', '').split('\\t') for _ in result if 'thres' in _]\n[_.remove('') for _ in thres]\n[_.remove('') for _ in thres]\nfor i,_ in enumerate(thres):\n    thres[i]=[float(x) for x in _]\n# thres\ntest_acc_list=[_.repl"
+      },
+      {
+        "index": 67,
+        "cell": 141,
+        "file": "figures/Visualizer/fig_067_cell141.png",
+        "source_snippet": "import numpy as np\nimport matplotlib.pyplot as plt\n\ndef main():\n    data = [[np.random.normal(i, 1, 30) for i in range(2)],\n            [np.random.normal(i, 1.5, 30) for i in range(3)],\n            [np.random.normal(i, 2, 30) for i in range(4)]]\n\n    fig, ax = plt.subplots()\n    groups = grouped_boxplots(data, ax, max_width=0.9,\n                              patch_artist=True, notch=True)\n\n    col"
+      },
+      {
+        "index": 68,
+        "cell": 145,
+        "file": "figures/Visualizer/fig_068_cell145.png",
+        "source_snippet": "import numpy as np\nimport matplotlib.pyplot as plt\n\ndef main():\n    data = [[values_F1_AT1_KNN.iloc[:, 0],\n            values_F4_AT1_KNN.iloc[:, 0]],\n            # [values_F1_AT1_SVM.iloc[:, 0],\n            # values_F4_AT1_SVM.iloc[:, 0]],\n            [values_F1_AT1_RF.iloc[:, 0],\n            values_F4_AT1_RF.iloc[:, 0]],\n            [values_F1_AT1_XGB.iloc[:, 0],\n            values_F4_AT1_XGB.ilo"
+      },
+      {
+        "index": 69,
+        "cell": 146,
+        "file": "figures/Visualizer/fig_069_cell146.png",
+        "source_snippet": "import matplotlib.pyplot as plt\nimport numpy as np\n# https://matplotlib.org/3.1.0/gallery/subplots_axes_and_figures/broken_axis.html\n\n# 30 points between [0, 0.2) originally made using np.random.rand(30)*.2\npts = np.array([\n    0.015, 0.166, 0.133, 0.159, 0.041, 0.024, 0.195, 0.039, 0.161, 0.018,\n    0.143, 0.056, 0.125, 0.096, 0.094, 0.051, 0.043, 0.021, 0.138, 0.075,\n    0.109, 0.195, 0.050, 0.0"
+      },
+      {
+        "index": 70,
+        "cell": 147,
+        "file": "figures/Visualizer/fig_070_cell147.png",
+        "source_snippet": "import numpy as np\nimport matplotlib.pyplot as plt\n\ndef main():\n    data = [[values_F1_AT1_KNN.iloc[:, 0],\n            values_F4_AT1_KNN.iloc[:, 0]],\n            [values_F1_AT1_SVM.iloc[:, 0],\n            values_F4_AT1_SVM.iloc[:, 0]],\n            [values_F1_AT1_RF.iloc[:, 0],\n            values_F4_AT1_RF.iloc[:, 0]],\n            [values_F1_AT1_XGB.iloc[:, 0],\n            values_F4_AT1_XGB.iloc[:,"
+      },
+      {
+        "index": 71,
+        "cell": 150,
+        "file": "figures/Visualizer/fig_071_cell150.png",
+        "source_snippet": "import pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# set width of bar\nbarWidth = 0.2\n\ndf=pd.DataFrame(dict(\n    # Model=[val acc, test acc] #val:A+B, test:C+D\n    KNN=[.982, .829, 1.000, .666],\n    SVM=[.961, .629, .995, .532],\n    RF=[.999, .991, 1.000, .974],\n    XGB=[.999, .991, 1.000, .978],\n    MLP=[.985, 1.000, .995, 1.000],\n    PAE=[.997, .985, 1.000, .910],\n    VAE=[.9"
+      },
+      {
+        "index": 72,
+        "cell": 151,
+        "file": "figures/Visualizer/fig_072_cell151.png",
+        "source_snippet": "import pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\nimport plotinpy as pnp\n\n# set width of bar\nbarWidth = 0.4\n\ndf=pd.DataFrame(dict(\n    # Model=[val acc, test acc] #val:A+B, test:C+D\n    KNN=[.982, .829, 1.000, .666],\n    SVM=[.961, .629, .995, .532],\n    RF=[.999, .991, 1.000, .974],\n    XGB=[.999, .991, 1.000, .978],\n    MLP=[.985, 1.000, .995, 1.000],\n    PAE=[.997, .985, 1."
+      },
+      {
+        "index": 73,
+        "cell": 155,
+        "file": "figures/Visualizer/fig_073_cell155.png",
+        "source_snippet": "plt.figure()\nplot_bars_with_breaks(\n    [1, 2, 30, 1000],\n    [(15, 25), (50, 975)],\n    style=\"~^~-\",\n    # break_args={\"linestyle\": '--',\n    #             'lw':1,\n    #             'hatch':None}\n    )"
+      },
+      {
+        "index": 74,
+        "cell": 156,
+        "file": "figures/Visualizer/fig_074_cell156.png",
+        "source_snippet": "import pandas as pd\nimport numpy as np\nimport matplotlib.pyplot as plt\n\n# set width of bar\nbarWidth = 0.4\n\ndf=pd.DataFrame(dict(\n    # Model=[val acc, test acc] #val:A+B, test:C+D\n    KNN=[.982, .829, 1.000, .666],\n    SVM=[.961, .629, .995, .532],\n    RF=[.999, .991, 1.000, .974],\n    XGB=[.999, .991, 1.000, .978],\n    MLP=[.985, 1.000, .995, 1.000],\n    PAE=[.997, .985, 1.000, .910],\n    VAE=[.9"
+      },
+      {
+        "index": 75,
+        "cell": 157,
+        "file": "figures/Visualizer/fig_075_cell157.png",
+        "source_snippet": "import pandas as pd\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nXX = pd.Series([200,1300,100,1400],index=['x1','x2','x3','x4'])\nfig, (ax1,ax2) = plt.subplots(2,1,sharex=True,\n                         figsize=(5,6))\nax1.spines['bottom'].set_visible(False)\nax1.tick_params(axis='x',which='both',bottom=False)\nax2.spines['top'].set_visible(False)\n\nbs = 600\nts = 1000\n\nax2.set_ylim(0,bs)\nax1.set_"
+      }
+    ]
+  },
+  "ResultParser_Meraz": {
+    "figures": 0,
+    "text_outputs": 7,
+    "figure_list": []
+  }
+}
