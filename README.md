@@ -1,5 +1,7 @@
 # Location Spoofing Detection — Interactive Research Demo
 
+**Language:** [English (US)](README.md) · [한국어](README.ko.md) · [Español](README.es.md) · [Deutsch](README.de.md)
+
 An interactive, static website that showcases research on detecting **location
 spoofing (position falsification) attacks in vehicular networks (VANET)**.
 
@@ -18,10 +20,11 @@ recovered from the project notebooks (`Visualizer.ipynb`,
 
 ## Structure
 ```
-security_6g_demo/
+.
 ├─ frontend/     # Vite + React + TS + Tailwind static site
 ├─ extracted/    # Figures + numeric outputs recovered from the notebooks
-└─ tools/        # extract_results.py — regenerates extracted/ from notebooks
+├─ tools/        # extract_results.py — regenerates extracted/ from notebooks
+└─ DEPLOY.md     # NAS bare repo + Mac mini hosting commands
 ```
 
 ## Develop
@@ -42,11 +45,12 @@ static host or subdirectory (e.g. nginx/Caddy on a Mac mini).
 
 ## Regenerate extracted results
 ```bash
-# from the Security_6G repo root, with its Python venv active
-python security_6g_demo/tools/extract_results.py
+# When this folder lives inside the Security_6G monorepo:
+python tools/extract_results.py
+# (run from the Security_6G repo root as: python security_6g_demo/tools/extract_results.py)
 ```
 
-## Languages
+## Languages (site UI)
 First visit shows a language picker. Supported: **English / 한국어 / Español /
 Deutsch**. Switch anytime from the nav language button. Preference is stored in
 `localStorage`.
