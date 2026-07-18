@@ -1,1 +1,0 @@
-# security-6g-demo
