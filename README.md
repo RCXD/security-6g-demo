@@ -43,6 +43,11 @@ npm run preview  # preview the production build locally
 The build uses a relative base path, so `frontend/dist/` can be served from any
 static host or subdirectory (e.g. nginx/Caddy on a Mac mini).
 
+## Live demo (GitHub Pages)
+https://rcxd.github.io/security-6g-demo/
+
+Pushes to `main` deploy automatically via `.github/workflows/deploy-pages.yml`.
+
 ## Regenerate extracted results
 ```bash
 # When this folder lives inside the Security_6G monorepo:
