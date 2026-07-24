@@ -21,11 +21,11 @@ export const en: Messages = {
   nav: {
     brand: 'Location Spoofing Detection',
     overview: 'Overview',
+    story: 'Background',
     attacks: 'Attacks',
     results: 'Results',
     research: 'Research',
     team: 'Team',
-    story: 'Background',
     toggleTheme: 'Toggle color theme',
   },
   hero: {
@@ -63,50 +63,85 @@ export const en: Messages = {
         body: 'Features cost O(1) to compute — no pairwise comparisons — so detection stays fast enough for on-vehicle, real-time operation.',
       },
     },
+    compare: {
+      title: 'Static samples vs. 2-sequence feature engineering',
+      stepLabel: 'Animation steps',
+      stepNames: ['Static snapshot', 'Spoofed BSM', 'Limitation', 'Outcome', 'Training lift'],
+      legend: { genuine: 'Genuine track', spoofed: 'Spoofed report' },
+      static: {
+        title: 'Prior static-sample testing',
+        sampleCaption:
+          'Earlier evaluations often treat each Basic Safety Message as an isolated static sample — a single (x, y) feature vector with no temporal context.',
+        spoofCaption:
+          'A spoofed coordinate can look plausible when inspected alone, especially under Basic (raw coordinate) features.',
+        limitCaption:
+          'Without consecutive messages, motion plausibility cannot be checked — inconsistent jumps stay hidden.',
+        missedCaption:
+          'Static testing on single snapshots misses spoofing that only becomes obvious across time.',
+        summaryCaption:
+          'This is why prior work on static VeReMi-style samples struggled to reach stable, high detection rates.',
+        missedBadge: 'Missed',
+      },
+      sequence: {
+        title: '2-sequence dataset (this work)',
+        streamCaption:
+          'VeReMi BSM logs are reorganized into consecutive pairs (Sᵗ⁻¹, Sᵗ) — turning a stream of static samples into a temporal dataset.',
+        pairCaption:
+          'Each training example is a 2-sequence window, not a lone message — the unit of analysis shifts from snapshot to motion.',
+        featureCaption:
+          'Differential features Dᵗ, dᵗ, Δt and κᵗ are engineered from the pair, encoding whether the step is physically plausible.',
+        detectCaption:
+          'A spoofed jump violates mobility constraints between the two messages — the pair is flagged even when each point looked fine alone.',
+        trainCaption:
+          'Models trained on this 2-sequence Ext feature set reach up to 99.1% detection — the training outcome prior static pipelines could not reliably achieve.',
+        detectedBadge: 'Detected',
+      },
+    },
   },
   contributions: {
     eyebrow: 'Research narrative',
-    title: 'What prior work missed — and how we addressed it',
+    title: 'Why static samples were not enough — and how 2-sequence data changed the outcome',
     subtitle:
-      'The IEEE Access and ICMLA papers do more than report accuracy: they critique earlier spoofing detectors, introduce mobility-aware differential features, and evaluate profiling against attack variations and unseen patterns.',
-    problem: {
-      title: 'Bottlenecks in location-spoofing detection',
+      'The key contribution is not only a new model, but a dataset construction and feature-engineering pipeline: rebuild VeReMi messages into 2-sequence training samples with differential features, then train lightweight classifiers that finally deliver the reported accuracy.',
+    prior: {
+      title: 'Prior work: static sample evaluation',
       body:
-        'Protecting location integrity involves three strands — supervised classification, raw coordinate features, and handling attack variations. IEEE Access 2023 starts from these bottlenecks and proposes differential features plus profiling.',
+        'Much of the earlier location-spoofing literature evaluates detectors on static feature vectors extracted from individual BSM snapshots. That setup mirrors how raw VeReMi samples are often stored — one row per message — but it discards the temporal signal that reveals spoofing.',
       bullets: [
-        'Supervised learning: needs labeled spoofed trajectories; strong on known patterns, weak on zero-day variations.',
-        'Raw coordinates (Basic features): simple but brittle — SVM test accuracy drops from ~94% validation to 63%.',
-        'Prior VeReMi-focused work: covered standard attack types but not enough coordinate-manipulation variations (offset sweeps, frozen position, random scatter).',
+        'Each message is reduced to instantaneous coordinates or Basic features without pairing across time.',
+        'Subtle spoofing (offset, random-walk, eventual-stop) can appear benign when only a single snapshot is inspected.',
+        'Reported accuracy on static splits is hard to reproduce once attack variations or harder VeReMi types are included.',
       ],
     },
-    solution: {
-      title: 'Differential Ext features + lightweight 2-BSM detection',
+    sequence: {
+      title: 'This work: 2-sequence dataset construction',
       body:
-        'The IEEE Access 2023 paper introduces a compact differential feature set computed from only two consecutive Basic Safety Messages.',
+        'The pipeline deliberately reorganizes the same VeReMi samples into consecutive 2-sequence windows and engineers Ext differential features before training. Detection becomes a question of motion consistency, not isolated coordinates.',
       bullets: [
-        'Ext features (Dᵗ, dᵗ, Δt, κᵗ) encode mobility constraints and inconsistency — checking whether reported motion is physically plausible in O(1) time.',
-        'Switching from Basic to Ext lifts every model: MLP reaches 99.1% test accuracy; even SVM recovers to 94.7% versus 63% on Basic features.',
-        'Only two consecutive messages (Sᵗ⁻¹, Sᵗ) are needed — no pairwise comparisons — keeping the detector viable for on-vehicle, real-time use.',
+        'Pair consecutive messages (Sᵗ⁻¹, Sᵗ) from each vehicle broadcast stream.',
+        'Compute Dᵗ, dᵗ, Δt and κᵗ — capturing displacement, step distance, timing and mobility-plausibility (MPC).',
+        'Train MLP / RF / XGB / SVM on the 2-sequence Ext dataset; Basic features remain as the ablation baseline.',
       ],
     },
-    adversarial: {
-      title: 'Variation attacks and profiling for unseen spoofing',
+    impact: {
+      title: 'Training outcome: Basic → Ext lift',
       body:
-        'Beyond benchmark accuracy, the work models how attackers vary coordinates and whether detectors trained only on legitimate traffic can still catch novel spoofing.',
+        'Once the dataset is rebuilt around 2-sequence differential features, every evaluated model improves — especially on harder attack types and parameter variations reported in IEEE Access 2023.',
       bullets: [
-        'IEEE Access establishes coordinate-manipulation scenarios (offset sweeps, frozen position, random scatter) beyond baseline VeReMi types to stress-test detectors.',
-        'ICMLA 2023 compares three autoencoder profilers against supervised learners on standard and variation attacks — profiling matches or beats supervised models without labeled spoofed data.',
-        'Profiling flags deviations from learned benign motion rather than memorizing spoof signatures — the path to resilience against intelligent, previously unseen evasion.',
+        'MLP + Ext reaches 99.1% test accuracy vs. 91.4% with Basic static features.',
+        'SVM recovers from 63% (Basic) to 94.7% (Ext) — the feature set matters more than the model choice.',
+        'Recovered heatmaps show >98% mean detection across attack-variation sweeps with Ext features.',
       ],
     },
-    venues: {
-      title: 'Where this research was presented',
+    pipeline: {
+      title: 'From VeReMi logs to trained detector',
       body:
-        'Published in a high-impact open-access IEEE journal and presented at an international machine-learning applications conference.',
-      items: [
-        'IEEE Access · Vol. 11, pp. 10813–10825 · January 2023 · open access',
-        'IEEE ICMLA 2023 · Jacksonville, FL · December 15–17, 2023',
-        '6G Security-by-Design program (IITP Grant 2021-0-00796) · Texas A&M University–Commerce & ETRI collaboration',
+        'The demo reconstructs results from this four-stage pipeline documented in the notebooks and papers:',
+      steps: [
+        'Ingest VeReMi BSM logs (benign + five spoofing types)',
+        'Build 2-sequence windows per vehicle stream',
+        'Engineer Basic vs. Ext differential feature vectors',
+        'Train & evaluate classifiers; profile autoencoders for zero-day',
       ],
     },
   },
@@ -154,6 +189,8 @@ export const en: Messages = {
     title: 'A better feature set, dramatically better detection',
     subtitle:
       'Switching from the Basic features (raw coordinates) to the Ext differential features lifts every model — especially the hardest attack types. All numbers are reconstructed from the recorded experiment outputs and the IEEE Access 2023 paper.',
+    reconstructedNote:
+      'Charts and heatmaps below are recovered from recorded experiment notebooks — illustrative of the 2-sequence training pipeline, not copies of publisher figures. IEEE articles are linked via DOI only.',
     accuracyTitle: 'Test accuracy by model',
     basic: 'Basic',
     ext: 'Ext',
@@ -173,13 +210,8 @@ export const en: Messages = {
   research: {
     eyebrow: 'The science',
     title: 'Publications',
-    subtitle: 'This demo reconstructs results from the following peer-reviewed papers.',
-    presentations: {
-      '10.1109/ACCESS.2023.3241236':
-        'Published in IEEE Access · Vol. 11 · Jan 2023 · open access journal article',
-      '10.1109/ICMLA58977.2023.00085':
-        'Presented at IEEE ICMLA 2023 · Jacksonville, FL · Dec 15–17, 2023',
-    },
+    subtitle:
+      'This demo reconstructs results from the following peer-reviewed papers. PDFs are not redistributed — DOI links only.',
     abstracts: {
       '10.1109/ACCESS.2023.3241236':
         'A data-driven methodology for reliable detection of location spoofing and its variations. A new differential feature set checks mobility constraints and inconsistency, improving detection to up to 99.1% accuracy, plus a profiling-based (autoencoder) approach for zero-day detection.',

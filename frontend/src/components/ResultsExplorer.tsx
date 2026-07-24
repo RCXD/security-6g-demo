@@ -32,6 +32,9 @@ export function ResultsExplorer() {
       title={t.results.title}
       subtitle={t.results.subtitle}
     >
+      <p className="-mt-6 mb-8 max-w-3xl text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+        {t.results.reconstructedNote}
+      </p>
       <div className="grid gap-6 lg:grid-cols-2">
         <div className="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-900">
           <div className="mb-5 flex items-center justify-between gap-4">

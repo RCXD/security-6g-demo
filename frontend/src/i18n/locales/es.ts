@@ -21,11 +21,11 @@ export const es: Messages = {
   nav: {
     brand: 'Detección de spoofing de ubicación',
     overview: 'Resumen',
+    story: 'Contexto',
     attacks: 'Ataques',
     results: 'Resultados',
     research: 'Investigación',
     team: 'Equipo',
-    story: 'Contexto',
     toggleTheme: 'Cambiar tema de color',
   },
   hero: {
@@ -63,53 +63,88 @@ export const es: Messages = {
         body: 'Las características cuestan O(1) de calcular — sin comparaciones por pares —, por lo que la detección sigue siendo viable a bordo del vehículo.',
       },
     },
+    compare: {
+      title: 'Muestras estáticas vs. ingeniería de características en 2 secuencias',
+      stepLabel: 'Pasos de la animación',
+      stepNames: ['Instantánea estática', 'BSM falsificado', 'Limitación', 'Resultado', 'Mejora del entrenamiento'],
+      legend: { genuine: 'Trayectoria genuina', spoofed: 'Informe falsificado' },
+      static: {
+        title: 'Evaluación previa con muestras estáticas',
+        sampleCaption:
+          'Evaluaciones anteriores suelen tratar cada Basic Safety Message como una muestra estática aislada — un vector (x, y) sin contexto temporal.',
+        spoofCaption:
+          'Una coordenada falsificada puede parecer plausible sola, especialmente con características Basic (coordenadas crudas).',
+        limitCaption:
+          'Sin mensajes consecutivos no se puede comprobar la plausibilidad del movimiento — los saltos inconsistentes permanecen ocultos.',
+        missedCaption:
+          'Las pruebas estáticas en instantáneas únicas no detectan spoofing que solo se revela en el tiempo.',
+        summaryCaption:
+          'Por eso el trabajo previo con muestras VeReMi estáticas no alcanzó tasas de detección estables y altas.',
+        missedBadge: 'No detectado',
+      },
+      sequence: {
+        title: 'Dataset de 2 secuencias (este trabajo)',
+        streamCaption:
+          'Los registros BSM de VeReMi se reorganizan en pares consecutivos (Sᵗ⁻¹, Sᵗ) — de muestras estáticas a un dataset temporal.',
+        pairCaption:
+          'Cada ejemplo de entrenamiento es una ventana de 2 secuencias, no un mensaje suelto — el análisis pasa de instantánea a movimiento.',
+        featureCaption:
+          'Se diseñan Dᵗ, dᵗ, Δt y κᵗ a partir del par, codificando si el paso es físicamente plausible.',
+        detectCaption:
+          'Un salto falsificado viola las restricciones de movilidad entre ambos mensajes — el par se marca aunque cada punto pareciera válido.',
+        trainCaption:
+          'Modelos entrenados con Ext en 2 secuencias alcanzan hasta 99,1% de detección — resultado que los pipelines estáticos no lograban de forma fiable.',
+        detectedBadge: 'Detectado',
+      },
+    },
   },
   contributions: {
-    eyebrow: 'Relato de investigación',
-    title: 'Lo que faltaba en trabajos previos — y cómo lo abordamos',
+    eyebrow: 'Narrativa de investigación',
+    title: 'Por qué las muestras estáticas no bastaban — y cómo los datos en 2 secuencias cambiaron el resultado',
     subtitle:
-      'Los artículos IEEE Access e ICMLA no solo reportan precisión: critican detectores anteriores, introducen características diferenciales conscientes de la movilidad y evalúan el perfilado ante variaciones y patrones no vistos.',
-    problem: {
-      title: 'Cuellos de botella por enfoque',
+      'La contribución clave no es solo un modelo nuevo, sino un pipeline de construcción de dataset e ingeniería de características: reconstruir mensajes VeReMi en muestras de entrenamiento de 2 secuencias con características diferenciales.',
+    prior: {
+      title: 'Trabajo previo: evaluación con muestras estáticas',
       body:
-        'Proteger la integridad de la posición implica tres líneas — clasificación supervisada (supervised learning), coordenadas crudas y variaciones (variation) de ataque. IEEE Access 2023 parte de estos cuellos de botella y propone características diferenciales (differential) y perfilado (profiling).',
+        'Gran parte de la literatura evalúa detectores con vectores estáticos de instantáneas BSM individuales — un registro por mensaje — descartando la señal temporal que revela el spoofing.',
       bullets: [
-        'Aprendizaje supervisado (supervised learning): requiere trayectorias falsificadas etiquetadas; fuerte en patrones conocidos, débil en variaciones zero-day (zero-day).',
-        'Coordenadas crudas (Basic): simples pero frágiles — la precisión de prueba de SVM cae del ~94% de validación al 63%.',
-        'Trabajos previos centrados en VeReMi: cubrieron tipos estándar pero no suficientes variaciones de manipulación de coordenadas.',
+        'Cada mensaje se reduce a coordenadas instantáneas o características Basic sin emparejar en el tiempo.',
+        'Spoofing sutil puede parecer benigno en una sola instantánea.',
+        'La precisión en divisiones estáticas es difícil de reproducir con variaciones de ataque o tipos VeReMi más difíciles.',
       ],
     },
-    solution: {
-      title: 'Características Ext diferenciales + detección ligera con 2 BSM',
+    sequence: {
+      title: 'Este trabajo: construcción del dataset de 2 secuencias',
       body:
-        'El artículo IEEE Access 2023 introduce un conjunto compacto de características diferenciales calculadas a partir de solo dos mensajes de seguridad consecutivos.',
+        'El pipeline reorganiza las mismas muestras VeReMi en ventanas consecutivas de 2 secuencias y diseña características Ext antes del entrenamiento.',
       bullets: [
-        'Las características Ext (Dᵗ, dᵗ, Δt, κᵗ) codifican restricciones de movilidad e inconsistencia — comprobando si el movimiento reportado es físicamente plausible en O(1).',
-        'Pasar de Basic a Ext mejora todos los modelos: MLP alcanza 99,1% en prueba; incluso SVM se recupera al 94,7% frente al 63% con Basic.',
-        'Solo se necesitan dos mensajes consecutivos (Sᵗ⁻¹, Sᵗ) — sin comparaciones por pares — manteniendo la viabilidad en tiempo real a bordo.',
+        'Emparejar mensajes consecutivos (Sᵗ⁻¹, Sᵗ) de cada flujo de difusión vehicular.',
+        'Calcular Dᵗ, dᵗ, Δt y κᵗ — desplazamiento, distancia, tiempo y plausibilidad de movilidad (MPC).',
+        'Entrenar MLP/RF/XGB/SVM en el dataset Ext de 2 secuencias; Basic como línea base de ablación.',
       ],
     },
-    adversarial: {
-      title: 'Variaciones (variation) de ataque y perfilado (profiling) para spoofing no visto',
+    impact: {
+      title: 'Resultado del entrenamiento: mejora Basic → Ext',
       body:
-        'Más allá de la precisión del benchmark, se modela cómo los atacantes varían coordenadas y si detectores entrenados solo con tráfico legítimo captan spoofing novedoso — robustez (robustness) zero-day (zero-day).',
+        'Al reconstruir el dataset en torno a características diferenciales de 2 secuencias, todos los modelos mejoran — especialmente en ataques difíciles (IEEE Access 2023).',
       bullets: [
-        'IEEE Access define escenarios de manipulación de coordenadas (barridos de offset, posición congelada, dispersión aleatoria) más allá de tipos VeReMi base.',
-        'ICMLA 2023 compara tres perfiladores con autoencoder contra aprendices supervisados en ataques estándar y de variación — el perfilado iguala o supera modelos supervisados sin datos falsificados etiquetados.',
-        'El perfilado marca desviaciones del movimiento benigno aprendido en lugar de memorizar firmas de spoofing — camino hacia resiliencia ante evasión inteligente y no vista.',
+        'MLP + Ext alcanza 99,1% de precisión de prueba frente a 91,4% con Basic estático.',
+        'SVM pasa del 63% (Basic) al 94,7% (Ext).',
+        'Mapas de calor recuperados muestran >98% de detección media en barridos de variación de ataque con Ext.',
       ],
     },
-    venues: {
-      title: 'Dónde se presentó esta investigación',
-      body:
-        'Publicada en una revista IEEE de alto impacto de acceso abierto y presentada en una conferencia internacional de aplicaciones de machine learning.',
-      items: [
-        'IEEE Access · Vol. 11, pp. 10813–10825 · enero 2023 · acceso abierto',
-        'IEEE ICMLA 2023 · Jacksonville, FL · 15–17 dic 2023',
-        'Programa 6G Security-by-Design (IITP Grant 2021-0-00796) · colaboración Texas A&M University–Commerce & ETRI',
+    pipeline: {
+      title: 'De registros VeReMi al detector entrenado',
+      body: 'La demo reconstruye resultados de este pipeline de cuatro etapas:',
+      steps: [
+        'Ingesta de registros BSM VeReMi (benigno + 5 tipos de spoofing)',
+        'Ventanas de 2 secuencias por flujo vehicular',
+        'Diseño de vectores Basic vs. Ext',
+        'Entrenamiento y evaluación; perfilado con autoencoder para zero-day',
       ],
     },
   },
+
   attacks: {
     eyebrow: 'La amenaza',
     title: 'Cinco formas de falsificar una posición',
@@ -154,6 +189,8 @@ export const es: Messages = {
     title: 'Mejores características, detección mucho más sólida',
     subtitle:
       'Pasar de las características Basic (coordenadas crudas) a Ext (diferenciales) mejora todos los modelos — especialmente en los ataques más difíciles. Las cifras se reconstruyeron a partir de las salidas experimentales registradas y del artículo IEEE Access 2023.',
+    reconstructedNote:
+      'Los gráficos y mapas de calor se recuperaron de cuadernos experimentales — ilustran el pipeline de entrenamiento en 2 secuencias, no son copias de figuras del editor. Los artículos IEEE solo enlazan por DOI.',
     accuracyTitle: 'Precisión de prueba por modelo',
     basic: 'Basic',
     ext: 'Ext',
@@ -175,12 +212,6 @@ export const es: Messages = {
     title: 'Publicaciones',
     subtitle:
       'Esta demo reconstruye resultados de los siguientes artículos revisados por pares.',
-    presentations: {
-      '10.1109/ACCESS.2023.3241236':
-        'Publicado en IEEE Access · Vol. 11 · ene 2023 · artículo de acceso abierto',
-      '10.1109/ICMLA58977.2023.00085':
-        'Presentado en IEEE ICMLA 2023 · Jacksonville, FL · 15–17 dic 2023',
-    },
     abstracts: {
       '10.1109/ACCESS.2023.3241236':
         'Una metodología basada en datos para la detección fiable del spoofing de ubicación y sus variaciones. Un nuevo conjunto de características diferenciales verifica restricciones de movilidad e inconsistencias, mejorando la detección hasta un 99.1% de precisión, junto con un enfoque de perfilado (autoencoder) para detección zero-day.',

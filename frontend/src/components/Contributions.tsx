@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion'
-import { AlertTriangle, Lightbulb, Shield, MapPin } from 'lucide-react'
+import { AlertTriangle, GitBranch, TrendingUp, MapPin } from 'lucide-react'
 import { Section } from './Section'
 import { useLanguage } from '../i18n/LanguageContext'
 
 const BLOCKS = [
-  { key: 'problem', icon: AlertTriangle },
-  { key: 'solution', icon: Lightbulb },
-  { key: 'adversarial', icon: Shield },
+  { key: 'prior', icon: AlertTriangle },
+  { key: 'sequence', icon: GitBranch },
+  { key: 'impact', icon: TrendingUp },
 ] as const
 
 export function Contributions() {
@@ -34,7 +34,7 @@ export function Contributions() {
               <div className="mb-4 inline-flex rounded-xl bg-accent-50 p-3 text-accent-600 dark:bg-accent-500/10 dark:text-accent-400">
                 <Icon className="h-6 w-6" />
               </div>
-              <h3 className="font-display text-lg font-semibold text-neutral-900 dark:text-white">
+              <h3 className="text-lg font-semibold text-neutral-900 dark:text-white">
                 {block.title}
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
@@ -67,23 +67,26 @@ export function Contributions() {
           <span className="inline-flex rounded-xl bg-accent-50 p-2.5 text-accent-600 dark:bg-accent-500/10 dark:text-accent-400">
             <MapPin className="h-5 w-5" />
           </span>
-          <h3 className="font-display text-lg font-semibold text-neutral-900 dark:text-white">
-            {t.contributions.venues.title}
+          <h3 className="text-lg font-semibold text-neutral-900 dark:text-white">
+            {t.contributions.pipeline.title}
           </h3>
         </div>
         <p className="text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
-          {t.contributions.venues.body}
+          {t.contributions.pipeline.body}
         </p>
-        <ul className="mt-5 grid gap-3 sm:grid-cols-2">
-          {t.contributions.venues.items.map((item) => (
+        <ol className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {t.contributions.pipeline.steps.map((step, i) => (
             <li
-              key={item}
-              className="rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm leading-relaxed text-neutral-700 dark:border-neutral-800 dark:bg-neutral-950 dark:text-neutral-300"
+              key={step}
+              className="flex gap-3 rounded-xl border border-neutral-200 bg-white px-4 py-3 text-sm leading-relaxed text-neutral-700 dark:border-neutral-800 dark:bg-neutral-950 dark:text-neutral-300"
             >
-              {item}
+              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-accent-600 text-xs font-bold text-white">
+                {i + 1}
+              </span>
+              <span>{step}</span>
             </li>
           ))}
-        </ul>
+        </ol>
       </motion.div>
     </Section>
   )

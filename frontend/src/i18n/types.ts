@@ -15,11 +15,11 @@ export type Messages = {
   nav: {
     brand: string
     overview: string
+    story: string
     attacks: string
     results: string
     research: string
     team: string
-    story: string
     toggleTheme: string
   }
   hero: {
@@ -46,15 +46,39 @@ export type Messages = {
       sequence: { title: string; body: string }
       realtime: { title: string; body: string }
     }
+    compare: {
+      title: string
+      stepLabel: string
+      stepNames: [string, string, string, string, string]
+      legend: { genuine: string; spoofed: string }
+      static: {
+        title: string
+        sampleCaption: string
+        spoofCaption: string
+        limitCaption: string
+        missedCaption: string
+        summaryCaption: string
+        missedBadge: string
+      }
+      sequence: {
+        title: string
+        streamCaption: string
+        pairCaption: string
+        featureCaption: string
+        detectCaption: string
+        trainCaption: string
+        detectedBadge: string
+      }
+    }
   }
   contributions: {
     eyebrow: string
     title: string
     subtitle: string
-    problem: { title: string; body: string; bullets: string[] }
-    solution: { title: string; body: string; bullets: string[] }
-    adversarial: { title: string; body: string; bullets: string[] }
-    venues: { title: string; body: string; items: string[] }
+    prior: { title: string; body: string; bullets: string[] }
+    sequence: { title: string; body: string; bullets: string[] }
+    impact: { title: string; body: string; bullets: string[] }
+    pipeline: { title: string; body: string; steps: string[] }
   }
   attacks: {
     eyebrow: string
@@ -70,6 +94,7 @@ export type Messages = {
     eyebrow: string
     title: string
     subtitle: string
+    reconstructedNote: string
     accuracyTitle: string
     basic: string
     ext: string
@@ -86,7 +111,6 @@ export type Messages = {
     eyebrow: string
     title: string
     subtitle: string
-    presentations: Record<string, string>
     abstracts: Record<string, string>
   }
   team: {

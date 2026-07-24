@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Radio, GitCompareArrows, Gauge } from 'lucide-react'
 import { Section } from './Section'
+import { SequenceCompareAnimation } from '../diagrams/SequenceCompareAnimation'
 import { useLanguage } from '../i18n/LanguageContext'
 
 export function Overview() {
@@ -18,6 +19,16 @@ export function Overview() {
       title={t.overview.title}
       subtitle={t.overview.subtitle}
     >
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-80px' }}
+        transition={{ duration: 0.55 }}
+        className="mb-10"
+      >
+        <SequenceCompareAnimation />
+      </motion.div>
+
       <div className="grid gap-5 md:grid-cols-3">
         {cards.map((c, i) => (
           <motion.div
