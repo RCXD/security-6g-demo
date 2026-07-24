@@ -70,13 +70,13 @@ export const de: Messages = {
     subtitle:
       'Die IEEE-Access- und ICMLA-Artikel berichten mehr als Genauigkeit: Sie kritisieren frühere Spoofing-Detektoren, führen mobilitätsbewusste Differenzialmerkmale ein und bewerten Profilierung gegen Variationen und ungesehene Muster.',
     problem: {
-      title: 'Lücken in früherer Location-Spoofing-Forschung',
+      title: 'Engpässe je Ansatz',
       body:
-        'Location Spoofing bedroht die VANET-Sicherheit, doch frühere Detektoren wirkten oft begrenzt oder fokussierten enge Angriffsmengen.',
+        'Positionsintegrität zu schützen betrifft drei Stränge — überwachte Klassifikation (supervised learning), Rohkoordinaten und Angriffsvariationen (variation). IEEE Access 2023 startet von diesen Engpässen und schlägt differenzielle (differential) Merkmale plus Profilierung (profiling) vor.',
       bullets: [
-        'Frühere Studien zeigten begrenzte Erkennungsleistung und adressierten Angriffsvariationen jenseits standard VeReMi-Szenarien nicht systematisch.',
-        'Überwachte Klassifikatoren benötigen gelabelte gefälschte Trajektorien — Detektion bleibt auf bekannte Angriffsmuster beschränkt.',
-        'Rohkoordinatenmerkmale (Basic-Set) scheitern bei schweren Angriffen: SVM-Testgenauigkeit bricht von 94%+ Validierung auf 63% ein.',
+        'Überwachtes Lernen (supervised learning): benötigt gelabelte Spoof-Trajektorien; stark bei bekannten Mustern, schwach bei Zero-Day-Variationen (zero-day).',
+        'Rohkoordinaten (Basic): einfach, aber fragil — SVM-Testgenauigkeit fällt von ~94% Validierung auf 63%.',
+        'Frühere VeReMi-fokussierte Arbeiten: deckten Standardtypen ab, aber nicht genug Koordinatenmanipulations-Variationen.',
       ],
     },
     solution: {
@@ -90,9 +90,9 @@ export const de: Messages = {
       ],
     },
     adversarial: {
-      title: 'Variationsangriffe und Profilierung für ungesehenes Spoofing',
+      title: 'Variationsangriffe (variation) und Profilierung (profiling) für ungesehenes Spoofing',
       body:
-        'Über Benchmark-Genauigkeit hinaus modelliert die Arbeit, wie Angreifer Koordinaten variieren und ob Detektoren nur mit legitimen Daten trainiert neues Spoofing erfassen.',
+        'Über Benchmark-Genauigkeit hinaus wird modelliert, wie Angreifer Koordinaten variieren und ob nur mit legitimen Daten trainierte Detektoren neues Spoofing erfassen — Zero-Day-Robustheit (robustness).',
       bullets: [
         'IEEE Access definiert Koordinatenmanipulationsszenarien (Offset-Sweeps, eingefrorene Position, zufällige Streuung) jenseits baseline VeReMi-Typen.',
         'ICMLA 2023 vergleicht drei Autoencoder-Profiler mit überwachten Lernverfahren bei Standard- und Variationsangriffen — Profilierung gleicht überwachten Modellen ohne gelabelte Spoof-Daten.',

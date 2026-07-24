@@ -70,13 +70,13 @@ export const es: Messages = {
     subtitle:
       'Los artículos IEEE Access e ICMLA no solo reportan precisión: critican detectores anteriores, introducen características diferenciales conscientes de la movilidad y evalúan el perfilado ante variaciones y patrones no vistos.',
     problem: {
-      title: 'Brechas en la investigación previa sobre spoofing',
+      title: 'Cuellos de botella por enfoque',
       body:
-        'El spoofing de ubicación amenaza la seguridad VANET, pero detectores anteriores a menudo rindieron poco o se centraron en conjuntos estrechos de ataques.',
+        'Proteger la integridad de la posición implica tres líneas — clasificación supervisada (supervised learning), coordenadas crudas y variaciones (variation) de ataque. IEEE Access 2023 parte de estos cuellos de botella y propone características diferenciales (differential) y perfilado (profiling).',
       bullets: [
-        'Estudios previos mostraron rendimiento limitado y no abordaron sistemáticamente variaciones de ataque más allá de escenarios VeReMi estándar.',
-        'Clasificadores supervisados requieren trayectorias falsificadas etiquetadas — limitando la detección a patrones conocidos.',
-        'Características de coordenadas crudas (conjunto Basic) fallan en ataques difíciles: la precisión de prueba de SVM cae del 94%+ de validación al 63%.',
+        'Aprendizaje supervisado (supervised learning): requiere trayectorias falsificadas etiquetadas; fuerte en patrones conocidos, débil en variaciones zero-day (zero-day).',
+        'Coordenadas crudas (Basic): simples pero frágiles — la precisión de prueba de SVM cae del ~94% de validación al 63%.',
+        'Trabajos previos centrados en VeReMi: cubrieron tipos estándar pero no suficientes variaciones de manipulación de coordenadas.',
       ],
     },
     solution: {
@@ -90,9 +90,9 @@ export const es: Messages = {
       ],
     },
     adversarial: {
-      title: 'Ataques de variación y perfilado para spoofing no visto',
+      title: 'Variaciones (variation) de ataque y perfilado (profiling) para spoofing no visto',
       body:
-        'Más allá de la precisión del benchmark, el trabajo modela cómo los atacantes varían coordenadas y si detectores entrenados solo con tráfico legítimo aún captan spoofing novedoso.',
+        'Más allá de la precisión del benchmark, se modela cómo los atacantes varían coordenadas y si detectores entrenados solo con tráfico legítimo captan spoofing novedoso — robustez (robustness) zero-day (zero-day).',
       bullets: [
         'IEEE Access define escenarios de manipulación de coordenadas (barridos de offset, posición congelada, dispersión aleatoria) más allá de tipos VeReMi base.',
         'ICMLA 2023 compara tres perfiladores con autoencoder contra aprendices supervisados en ataques estándar y de variación — el perfilado iguala o supera modelos supervisados sin datos falsificados etiquetados.',

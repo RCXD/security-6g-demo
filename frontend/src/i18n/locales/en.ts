@@ -70,13 +70,13 @@ export const en: Messages = {
     subtitle:
       'The IEEE Access and ICMLA papers do more than report accuracy: they critique earlier spoofing detectors, introduce mobility-aware differential features, and evaluate profiling against attack variations and unseen patterns.',
     problem: {
-      title: 'Gaps in earlier location-spoofing research',
+      title: 'Bottlenecks in location-spoofing detection',
       body:
-        'Location spoofing threatens VANET safety, yet prior detectors often underperformed or focused on a narrow set of attack patterns.',
+        'Protecting location integrity involves three strands — supervised classification, raw coordinate features, and handling attack variations. IEEE Access 2023 starts from these bottlenecks and proposes differential features plus profiling.',
       bullets: [
-        'Earlier studies showed limited detection performance and did not systematically address emerging attack variations beyond standard VeReMi scenarios.',
-        'Supervised classifiers require labeled spoofed trajectories — confining detectors to known attack patterns instead of zero-day variations.',
-        'Raw coordinate features (the Basic set) break under harder attacks: SVM test accuracy collapses from 94%+ validation to 63% when only basic position fields are used.',
+        'Supervised learning: needs labeled spoofed trajectories; strong on known patterns, weak on zero-day variations.',
+        'Raw coordinates (Basic features): simple but brittle — SVM test accuracy drops from ~94% validation to 63%.',
+        'Prior VeReMi-focused work: covered standard attack types but not enough coordinate-manipulation variations (offset sweeps, frozen position, random scatter).',
       ],
     },
     solution: {
