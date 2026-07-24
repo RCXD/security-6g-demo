@@ -1,6 +1,7 @@
 import { Nav } from './components/Nav'
 import { Hero } from './components/Hero'
 import { Overview } from './components/Overview'
+import { Contributions } from './components/Contributions'
 import { AttackTypes } from './components/AttackTypes'
 import { ResultsExplorer } from './components/ResultsExplorer'
 import { Research } from './components/Research'
@@ -19,6 +20,7 @@ function AppShell() {
       <main>
         <Hero />
         <Overview />
+        <Contributions />
         <AttackTypes />
         <ResultsExplorer />
         <Research />

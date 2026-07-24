@@ -25,6 +25,7 @@ export const en: Messages = {
     results: 'Results',
     research: 'Research',
     team: 'Team',
+    story: 'Background',
     toggleTheme: 'Toggle color theme',
   },
   hero: {
@@ -61,6 +62,52 @@ export const en: Messages = {
         title: 'Lightweight & real-time',
         body: 'Features cost O(1) to compute — no pairwise comparisons — so detection stays fast enough for on-vehicle, real-time operation.',
       },
+    },
+  },
+  contributions: {
+    eyebrow: 'Research narrative',
+    title: 'What prior work missed — and how we addressed it',
+    subtitle:
+      'The IEEE Access and ICMLA papers do more than report accuracy: they critique earlier spoofing detectors, introduce mobility-aware differential features, and evaluate profiling against attack variations and unseen patterns.',
+    problem: {
+      title: 'Gaps in earlier location-spoofing research',
+      body:
+        'Location spoofing threatens VANET safety, yet prior detectors often underperformed or focused on a narrow set of attack patterns.',
+      bullets: [
+        'Earlier studies showed limited detection performance and did not systematically address emerging attack variations beyond standard VeReMi scenarios.',
+        'Supervised classifiers require labeled spoofed trajectories — confining detectors to known attack patterns instead of zero-day variations.',
+        'Raw coordinate features (the Basic set) break under harder attacks: SVM test accuracy collapses from 94%+ validation to 63% when only basic position fields are used.',
+      ],
+    },
+    solution: {
+      title: 'Differential Ext features + lightweight 2-BSM detection',
+      body:
+        'The IEEE Access 2023 paper introduces a compact differential feature set computed from only two consecutive Basic Safety Messages.',
+      bullets: [
+        'Ext features (Dᵗ, dᵗ, Δt, κᵗ) encode mobility constraints and inconsistency — checking whether reported motion is physically plausible in O(1) time.',
+        'Switching from Basic to Ext lifts every model: MLP reaches 99.1% test accuracy; even SVM recovers to 94.7% versus 63% on Basic features.',
+        'Only two consecutive messages (Sᵗ⁻¹, Sᵗ) are needed — no pairwise comparisons — keeping the detector viable for on-vehicle, real-time use.',
+      ],
+    },
+    adversarial: {
+      title: 'Variation attacks and profiling for unseen spoofing',
+      body:
+        'Beyond benchmark accuracy, the work models how attackers vary coordinates and whether detectors trained only on legitimate traffic can still catch novel spoofing.',
+      bullets: [
+        'IEEE Access establishes coordinate-manipulation scenarios (offset sweeps, frozen position, random scatter) beyond baseline VeReMi types to stress-test detectors.',
+        'ICMLA 2023 compares three autoencoder profilers against supervised learners on standard and variation attacks — profiling matches or beats supervised models without labeled spoofed data.',
+        'Profiling flags deviations from learned benign motion rather than memorizing spoof signatures — the path to resilience against intelligent, previously unseen evasion.',
+      ],
+    },
+    venues: {
+      title: 'Where this research was presented',
+      body:
+        'Published in a high-impact open-access IEEE journal and presented at an international machine-learning applications conference.',
+      items: [
+        'IEEE Access · Vol. 11, pp. 10813–10825 · January 2023 · open access',
+        'IEEE ICMLA 2023 · Jacksonville, FL · December 15–17, 2023',
+        '6G Security-by-Design program (IITP Grant 2021-0-00796) · Texas A&M University–Commerce & ETRI collaboration',
+      ],
     },
   },
   attacks: {
@@ -127,6 +174,12 @@ export const en: Messages = {
     eyebrow: 'The science',
     title: 'Publications',
     subtitle: 'This demo reconstructs results from the following peer-reviewed papers.',
+    presentations: {
+      '10.1109/ACCESS.2023.3241236':
+        'Published in IEEE Access · Vol. 11 · Jan 2023 · open access journal article',
+      '10.1109/ICMLA58977.2023.00085':
+        'Presented at IEEE ICMLA 2023 · Jacksonville, FL · Dec 15–17, 2023',
+    },
     abstracts: {
       '10.1109/ACCESS.2023.3241236':
         'A data-driven methodology for reliable detection of location spoofing and its variations. A new differential feature set checks mobility constraints and inconsistency, improving detection to up to 99.1% accuracy, plus a profiling-based (autoencoder) approach for zero-day detection.',

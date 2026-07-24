@@ -39,6 +39,11 @@ export function Research() {
             <p className="mt-1 text-sm font-medium text-accent-600 dark:text-accent-400">
               {p.venue} · {p.year}
             </p>
+            {t.research.presentations[p.doi] && (
+              <p className="mt-2 text-xs font-medium leading-relaxed text-neutral-500 dark:text-neutral-400">
+                {t.research.presentations[p.doi]}
+              </p>
+            )}
             <p className="mt-3 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
               {t.research.abstracts[p.doi] ?? p.abstract}
             </p>

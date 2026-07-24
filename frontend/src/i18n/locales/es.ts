@@ -25,6 +25,7 @@ export const es: Messages = {
     results: 'Resultados',
     research: 'Investigación',
     team: 'Equipo',
+    story: 'Contexto',
     toggleTheme: 'Cambiar tema de color',
   },
   hero: {
@@ -61,6 +62,52 @@ export const es: Messages = {
         title: 'Ligero y en tiempo real',
         body: 'Las características cuestan O(1) de calcular — sin comparaciones por pares —, por lo que la detección sigue siendo viable a bordo del vehículo.',
       },
+    },
+  },
+  contributions: {
+    eyebrow: 'Relato de investigación',
+    title: 'Lo que faltaba en trabajos previos — y cómo lo abordamos',
+    subtitle:
+      'Los artículos IEEE Access e ICMLA no solo reportan precisión: critican detectores anteriores, introducen características diferenciales conscientes de la movilidad y evalúan el perfilado ante variaciones y patrones no vistos.',
+    problem: {
+      title: 'Brechas en la investigación previa sobre spoofing',
+      body:
+        'El spoofing de ubicación amenaza la seguridad VANET, pero detectores anteriores a menudo rindieron poco o se centraron en conjuntos estrechos de ataques.',
+      bullets: [
+        'Estudios previos mostraron rendimiento limitado y no abordaron sistemáticamente variaciones de ataque más allá de escenarios VeReMi estándar.',
+        'Clasificadores supervisados requieren trayectorias falsificadas etiquetadas — limitando la detección a patrones conocidos.',
+        'Características de coordenadas crudas (conjunto Basic) fallan en ataques difíciles: la precisión de prueba de SVM cae del 94%+ de validación al 63%.',
+      ],
+    },
+    solution: {
+      title: 'Características Ext diferenciales + detección ligera con 2 BSM',
+      body:
+        'El artículo IEEE Access 2023 introduce un conjunto compacto de características diferenciales calculadas a partir de solo dos mensajes de seguridad consecutivos.',
+      bullets: [
+        'Las características Ext (Dᵗ, dᵗ, Δt, κᵗ) codifican restricciones de movilidad e inconsistencia — comprobando si el movimiento reportado es físicamente plausible en O(1).',
+        'Pasar de Basic a Ext mejora todos los modelos: MLP alcanza 99,1% en prueba; incluso SVM se recupera al 94,7% frente al 63% con Basic.',
+        'Solo se necesitan dos mensajes consecutivos (Sᵗ⁻¹, Sᵗ) — sin comparaciones por pares — manteniendo la viabilidad en tiempo real a bordo.',
+      ],
+    },
+    adversarial: {
+      title: 'Ataques de variación y perfilado para spoofing no visto',
+      body:
+        'Más allá de la precisión del benchmark, el trabajo modela cómo los atacantes varían coordenadas y si detectores entrenados solo con tráfico legítimo aún captan spoofing novedoso.',
+      bullets: [
+        'IEEE Access define escenarios de manipulación de coordenadas (barridos de offset, posición congelada, dispersión aleatoria) más allá de tipos VeReMi base.',
+        'ICMLA 2023 compara tres perfiladores con autoencoder contra aprendices supervisados en ataques estándar y de variación — el perfilado iguala o supera modelos supervisados sin datos falsificados etiquetados.',
+        'El perfilado marca desviaciones del movimiento benigno aprendido en lugar de memorizar firmas de spoofing — camino hacia resiliencia ante evasión inteligente y no vista.',
+      ],
+    },
+    venues: {
+      title: 'Dónde se presentó esta investigación',
+      body:
+        'Publicada en una revista IEEE de alto impacto de acceso abierto y presentada en una conferencia internacional de aplicaciones de machine learning.',
+      items: [
+        'IEEE Access · Vol. 11, pp. 10813–10825 · enero 2023 · acceso abierto',
+        'IEEE ICMLA 2023 · Jacksonville, FL · 15–17 dic 2023',
+        'Programa 6G Security-by-Design (IITP Grant 2021-0-00796) · colaboración Texas A&M University–Commerce & ETRI',
+      ],
     },
   },
   attacks: {
@@ -128,6 +175,12 @@ export const es: Messages = {
     title: 'Publicaciones',
     subtitle:
       'Esta demo reconstruye resultados de los siguientes artículos revisados por pares.',
+    presentations: {
+      '10.1109/ACCESS.2023.3241236':
+        'Publicado en IEEE Access · Vol. 11 · ene 2023 · artículo de acceso abierto',
+      '10.1109/ICMLA58977.2023.00085':
+        'Presentado en IEEE ICMLA 2023 · Jacksonville, FL · 15–17 dic 2023',
+    },
     abstracts: {
       '10.1109/ACCESS.2023.3241236':
         'Una metodología basada en datos para la detección fiable del spoofing de ubicación y sus variaciones. Un nuevo conjunto de características diferenciales verifica restricciones de movilidad e inconsistencias, mejorando la detección hasta un 99.1% de precisión, junto con un enfoque de perfilado (autoencoder) para detección zero-day.',

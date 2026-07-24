@@ -19,6 +19,7 @@ export type Messages = {
     results: string
     research: string
     team: string
+    story: string
     toggleTheme: string
   }
   hero: {
@@ -45,6 +46,15 @@ export type Messages = {
       sequence: { title: string; body: string }
       realtime: { title: string; body: string }
     }
+  }
+  contributions: {
+    eyebrow: string
+    title: string
+    subtitle: string
+    problem: { title: string; body: string; bullets: string[] }
+    solution: { title: string; body: string; bullets: string[] }
+    adversarial: { title: string; body: string; bullets: string[] }
+    venues: { title: string; body: string; items: string[] }
   }
   attacks: {
     eyebrow: string
@@ -76,6 +86,7 @@ export type Messages = {
     eyebrow: string
     title: string
     subtitle: string
+    presentations: Record<string, string>
     abstracts: Record<string, string>
   }
   team: {
