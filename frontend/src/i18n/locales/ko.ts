@@ -30,18 +30,18 @@ export const ko: Messages = {
   },
   hero: {
     badge: 'VANET 보안 · 6G Security-by-Design',
-    titleBefore: '차량 네트워크의 ',
+    titleBefore: '차량 네트워크에서 ',
     titleAccent: '위치 스푸핑',
-    titleAfter: '을 찾아냅니다',
+    titleAfter: '을 탐지합니다',
     subtitle:
-      '연속된 안전 메시지 두 개만으로 위조 GPS를 가려내는 방법을 소개합니다. 차분 특징 몇 가지로 최대 {accuracy}% 탐지 정확도를 달성했습니다.',
-    ctaAttacks: '공격 유형 보기',
+      '안전 메시지 두 개만으로도 위조 GPS를 걸러낼 수 있습니다. 차분 특징만으로 최대 {accuracy}%의 탐지 정확도를 달성했습니다.',
+    ctaAttacks: '공격 유형 살펴보기',
     ctaResults: '실험 결과 보기',
     stats: {
       accuracy: '최고 탐지 정확도 (MLP + Ext)',
-      attackTypes: '모델링한 스푸핑 공격',
-      features: '핵심이 된 차분 특징',
-      zeroDay: '새로운 공격용 오토인코더 프로파일링',
+      attackTypes: '스푸핑 공격 유형',
+      features: '차분 특징 수',
+      zeroDay: '제로데이 공격 탐지',
     },
   },
   overview: {
