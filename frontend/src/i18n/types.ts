@@ -75,6 +75,7 @@ export type Messages = {
     eyebrow: string
     title: string
     subtitle: string
+    context: { title: string; body: string; bullets: string[] }
     prior: { title: string; body: string; bullets: string[] }
     sequence: { title: string; body: string; bullets: string[] }
     impact: { title: string; body: string; bullets: string[] }

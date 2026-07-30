@@ -103,6 +103,16 @@ export const es: Messages = {
     title: 'Por qué las muestras estáticas no bastaban — y cómo los datos en 2 secuencias cambiaron el resultado',
     subtitle:
       'La contribución clave no es solo un modelo nuevo, sino un pipeline de construcción de dataset e ingeniería de características: reconstruir mensajes VeReMi en muestras de entrenamiento de 2 secuencias con características diferenciales.',
+    context: {
+      title: 'Por qué importa ahora la integridad de la ubicación: drones, redes y cielos en disputa',
+      body:
+        'Conflictos recientes — desde la guerra en Ucrania hasta las tensiones EE.UU.–Irán en Oriente Medio — muestran cuán centrales son los drones (UAV) y las operaciones en red. Tanto si la plataforma vuela como si circula, una coordenada falsificada puede romper a la vez la evitación de colisiones, la identificación de objetivos y la coordinación de enjambres. El spoofing de ubicación no es solo un modelo de amenaza de paper; refleja cómo se disputa hoy la confianza en navegación y comunicaciones.',
+      bullets: [
+        'En Ucrania, drones, guerra electrónica e interferencia de navegación han convertido la fiabilidad de GPS y enlaces en una preocupación operativa diaria.',
+        'Las tensiones relacionadas con EE.UU.–Irán también han puesto de relieve vulnerabilidades en sistemas no tripulados, defensa aérea y C2 en red.',
+        'El mismo problema de integridad aparece en VANET y movilidad automatizada: un informe de posición falso puede encadenar daño real.',
+      ],
+    },
     prior: {
       title: 'Trabajo previo: evaluación con muestras estáticas',
       body:

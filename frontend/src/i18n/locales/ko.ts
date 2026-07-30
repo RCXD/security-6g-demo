@@ -9,7 +9,7 @@ export const ko: Messages = {
   lang: {
     label: '언어',
     chooseTitle: '언어 선택',
-    chooseSubtitle: '상단 메뉴에서 언제든 다시 바꿀 수 있다.',
+    chooseSubtitle: '상단 메뉴에서 언제든 다시 변경 가능',
     continue: '시작하기',
     names: {
       en: 'English',
@@ -34,7 +34,7 @@ export const ko: Messages = {
     titleAccent: '위치 스푸핑(location spoofing)',
     titleAfter: '을 잡아내는 방법에 관한 연구',
     subtitle:
-      '연속된 안전 메시지(Basic Safety Message, BSM) 두 개만으로도 위조 GPS를 가려낸다. 차분 특징(differential feature) 몇 가지로 탐지 정확도는 최대 {accuracy}%까지 올랐다.',
+      '연속된 안전 메시지(Basic Safety Message, BSM) 두 개만으로 위조 GPS를 가려내는 방법. 차분 특징(differential feature)으로 탐지 정확도 최대 {accuracy}%.',
     ctaAttacks: '공격 유형 보기',
     ctaResults: '실험 결과 보기',
     stats: {
@@ -46,9 +46,9 @@ export const ko: Messages = {
   },
   overview: {
     eyebrow: '아이디어',
-    title: '위치는 안전 신호다. 그래서 무결성이 관건이다',
+    title: '위치는 안전 신호, 무결성이 관건',
     subtitle:
-      '차량 애드혹 네트워크(VANET)에서 위치는 충돌 회피·차선 변경 판단의 근거가 된다. 그 좌표를 속이면 바로 위험으로 이어진다. 이번 연구는 최소한의 정보만으로도 그런 위조를 안정적으로 잡는다.',
+      '자율주행차·드론·무인 체계가 늘어날수록, 보고된 좌표 하나를 믿을 수 있는지가 곧 안전과 작전 성패를 가르는 문제. 차량 애드혹 네트워크(VANET)에서 위치는 충돌 회피·차선 변경의 근거가 되고, 그 좌표를 속이면 사고로 직결. 이번 연구의 초점: 최소한의 메시지 정보만으로도 그런 위조를 안정적으로 잡아내는 방법.',
     cards: {
       bsm: {
         title: 'Basic Safety Message (BSM)',
@@ -100,9 +100,19 @@ export const ko: Messages = {
   },
   contributions: {
     eyebrow: '연구 배경',
-    title: '정적 샘플만으로는 부족했다. 2-시퀀스가 바꾼 결과',
+    title: '왜 지금, 위치 무결성인가',
     subtitle:
-      '핵심은 새 모델만이 아니다. VeReMi 메시지를 2-시퀀스 학습 샘플로 다시 만들고 차분 특징을 설계한 뒤, 가벼운 분류기(classifier)로 보고된 정확도를 낸 데이터·특징 공학(feature engineering) 파이프라인이다.',
+      '논문 속 VeReMi 실험만으로 끝나지 않는 이야기. 최근 전장과 무인 체계가 보여 주듯, 위치·항법·통신 네트워크의 신뢰는 이미 민간 안전과 안보를 가르는 문제로 올라와 있음.',
+    context: {
+      title: '드론·무인 체계 시대, 위치가 흔들리면 전체가 흔들리는 이유',
+      body:
+        '우크라이나와 러시아 전쟁, 중동에서의 미국과 이란 관련 긴장만 봐도 드론(UAV)과 네트워크 중심 작전이 전장의 기본 문법이 됐다는 점을 알 수 있다. 공중에서 움직이는 플랫폼이든, 지상의 차량 네트워크든, 보고된 좌표가 틀리면 충돌 회피·표적 식별·군집 운용 같은 상위 판단이 한꺼번에 무너진다. 위치 스푸핑(location spoofing)은 그래서 “논문용 공격”이 아니라, 지금 현장에서 커지고 있는 위협 모델에 가깝다.',
+      bullets: [
+        '우러 전쟁에서 드론·전자전·항법 교란이 일상화되며, GPS·통신 신뢰의 중요성이 재확인됐다.',
+        '미국과 이란 관련 긴장 속에서도 무인기·방공·네트워크 연동의 취약점이 안보 이슈로 떠올랐다.',
+        '같은 논리는 VANET·자율주행·스마트 모빌리티에도 적용된다. 가짜 위치 한 줄이 연쇄 사고를 부를 수 있다.',
+      ],
+    },
     prior: {
       title: '기존 연구: 정적 샘플(static sample) 평가',
       body:
@@ -148,7 +158,7 @@ export const ko: Messages = {
     eyebrow: '위협',
     title: '위치를 속이는 다섯 가지 방식',
     subtitle:
-      'VeReMi 벤치마크는 스푸핑(spoofing) 공격 다섯 가지를 정의한다. 유형을 고르면 보고된 궤적이 어떻게 어긋나는지 볼 수 있다. 파랑은 정상, 빨강은 위조 궤적(spoofed track)이다.',
+      'VeReMi 벤치마크가 정의한 스푸핑(spoofing) 공격 다섯 가지. 유형을 고르면 보고된 궤적이 어떻게 어긋나는지 확인 가능. 파랑은 정상, 빨강은 위조 궤적(spoofed track).',
     typeLabel: 'Type',
     items: {
       constant: {
@@ -187,7 +197,7 @@ export const ko: Messages = {
     eyebrow: '실험 결과',
     title: '더 나은 feature, 훨씬 나은 탐지',
     subtitle:
-      'Basic feature(원시 좌표)에서 Ext 차분 특징으로 바꾸면 모든 모델이 좋아진다. 특히 어려운 공격에서 차이가 크다. 수치는 기록된 실험 결과와 IEEE Access 2023 논문을 바탕으로 다시 구성했다.',
+      'Basic feature(원시 좌표)에서 Ext 차분 특징으로 전환한 뒤의 성능 변화. 어려운 공격일수록 격차가 크고, 수치는 기록된 실험 결과와 IEEE Access 2023 논문을 바탕으로 재구성.',
     reconstructedNote:
       '아래 차트·히트맵은 실험 노트북에서 복원한 자료다. 2-시퀀스 학습 과정을 보여 주기 위한 것이며, 출판사 figure의 복사본이 아니다. IEEE 논문은 DOI 링크만 제공한다.',
     accuracyTitle: '모델별 테스트 정확도(test accuracy)',
@@ -210,7 +220,7 @@ export const ko: Messages = {
     eyebrow: '연구',
     title: '논문',
     subtitle:
-      '이 데모는 아래 동료 심사(peer-reviewed) 논문의 결과를 다시 구성해 보여 준다. PDF는 배포하지 않으며 DOI 링크만 제공한다.',
+      '아래 동료 심사(peer-reviewed) 논문의 결과를 재구성한 데모. PDF는 배포하지 않으며 DOI 링크만 제공.',
     abstracts: {
       '10.1109/ACCESS.2023.3241236':
         '위치 스푸핑과 그 변형을 안정적으로 탐지하는 데이터 기반 방법을 제안한다. 이동 제약과 불일치를 보는 새 차분 특징으로 최대 99.1% 탐지 정확도를 냈고, 제로데이(zero-day)용 오토인코더(autoencoder) 프로파일링도 함께 제안했다.',
@@ -222,7 +232,7 @@ export const ko: Messages = {
     eyebrow: '연구진',
     title: '연구팀',
     subtitle:
-      'Texas A&M University–Commerce, University of Colorado Colorado Springs, ETRI의 공동 연구다.',
+      'Texas A&M University–Commerce, University of Colorado Colorado Springs, ETRI 공동 연구',
     funding:
       '본 연구는 일부 IITP(과학기술정보통신부)의 지원을 받았다. 과제명 “상시적 보안 품질 보장을 위한 6G 자율 보안 설계 기반 기술 연구”, 과제번호 2021-0-00796.',
     roles: {

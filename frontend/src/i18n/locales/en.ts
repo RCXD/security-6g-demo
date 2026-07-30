@@ -48,7 +48,7 @@ export const en: Messages = {
     eyebrow: 'The idea',
     title: 'Location is a safety-critical signal — so its integrity matters',
     subtitle:
-      'In vehicular ad-hoc networks, positions drive collision avoidance and lane-change decisions. Spoofing that position is dangerous. This work detects it reliably from minimal information.',
+      'In vehicular ad-hoc networks, positions drive collision avoidance and lane-change decisions. Spoofing that position is dangerous — and the same integrity problem is growing wherever drones and networked unmanned systems operate. This work detects falsified reports from minimal information.',
     cards: {
       bsm: {
         title: 'Basic Safety Messages',
@@ -100,9 +100,19 @@ export const en: Messages = {
   },
   contributions: {
     eyebrow: 'Research narrative',
-    title: 'Why static samples were not enough — and how 2-sequence data changed the outcome',
+    title: 'Why location integrity matters now — and how 2-sequence data changed detection',
     subtitle:
-      'The key contribution is not only a new model, but a dataset construction and feature-engineering pipeline: rebuild VeReMi messages into 2-sequence training samples with differential features, then train lightweight classifiers that finally deliver the reported accuracy.',
+      'Beyond the VeReMi notebooks: recent conflicts show how drones and networked operations raise the cost of untrusted coordinates. This demo then walks the dataset and feature-engineering pipeline that delivered the reported accuracy.',
+    context: {
+      title: 'Why location integrity matters now: drones, networks, and contested skies',
+      body:
+        'Recent conflicts — from the war in Ukraine to U.S.–Iran tensions in the Middle East — make clear how central drones (UAVs) and networked operations have become. Whether the platform flies or drives, a falsified coordinate can break collision avoidance, targeting, and swarm coordination at once. Location spoofing is therefore not only a paper threat model; it tracks how navigation and communications trust are contested in the field today.',
+      bullets: [
+        'In Ukraine, drones, electronic warfare, and navigation interference have made GPS and link reliability a daily operational concern.',
+        'U.S.–Iran-related tensions have likewise highlighted vulnerabilities in unmanned systems, air defense, and networked C2.',
+        'The same integrity problem appears in VANETs and automated mobility: one forged position report can cascade into real-world harm.',
+      ],
+    },
     prior: {
       title: 'Prior work: static sample evaluation',
       body:

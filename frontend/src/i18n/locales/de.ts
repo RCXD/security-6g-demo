@@ -103,6 +103,16 @@ export const de: Messages = {
     title: 'Warum statische Stichproben nicht reichten — und wie 2-Sequenz-Daten das Ergebnis änderten',
     subtitle:
       'Der Kernbeitrag ist nicht nur ein neues Modell, sondern ein Pipeline zur Datensatzkonstruktion und Feature-Engineering: VeReMi-Nachrichten in 2-Sequenz-Trainingsstichproben mit Differenzialmerkmalen umzubauen.',
+    context: {
+      title: 'Warum Positionsintegrität jetzt zählt: Drohnen, Netze und umkämpfte Lufträume',
+      body:
+        'Aktuelle Konflikte — vom Krieg in der Ukraine bis zu Spannungen zwischen den USA und dem Iran im Nahen Osten — zeigen, wie zentral Drohnen (UAV) und vernetzte Operationen geworden sind. Ob die Plattform fliegt oder fährt: eine gefälschte Koordinate kann Kollisionsvermeidung, Zielerfassung und Schwarmkoordination zugleich brechen. Location Spoofing ist deshalb nicht nur ein Bedrohungsmodell aus dem Paper, sondern folgt dem, wie Navigations- und Kommunikationsvertrauen heute im Feld bestritten wird.',
+      bullets: [
+        'In der Ukraine haben Drohnen, elektronische Kampfführung und Navigationsstörungen die Zuverlässigkeit von GPS und Verbindungen zum Alltagsthema gemacht.',
+        'USA–Iran-bezogene Spannungen haben ebenfalls Schwachstellen unbemannter Systeme, der Luftverteidigung und vernetzter Führung sichtbar gemacht.',
+        'Dasselbe Integritätsproblem zeigt sich in VANET und automatisierter Mobilität: ein gefälschter Positionsbericht kann reale Schäden auslösen.',
+      ],
+    },
     prior: {
       title: 'Frühere Arbeit: statische Stichprobenauswertung',
       body:

@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion'
-import { AlertTriangle, GitBranch, TrendingUp, MapPin } from 'lucide-react'
+import { AlertTriangle, GitBranch, TrendingUp, MapPin, Radar } from 'lucide-react'
 import { Section } from './Section'
 import { useLanguage } from '../i18n/LanguageContext'
 
-const BLOCKS = [
+const METHOD_BLOCKS = [
   { key: 'prior', icon: AlertTriangle },
   { key: 'sequence', icon: GitBranch },
   { key: 'impact', icon: TrendingUp },
@@ -11,6 +11,7 @@ const BLOCKS = [
 
 export function Contributions() {
   const { t } = useLanguage()
+  const context = t.contributions.context
 
   return (
     <Section
@@ -19,8 +20,37 @@ export function Contributions() {
       title={t.contributions.title}
       subtitle={t.contributions.subtitle}
     >
-      <div className="grid gap-5 lg:grid-cols-3">
-        {BLOCKS.map(({ key, icon: Icon }, i) => {
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-60px' }}
+        transition={{ duration: 0.5 }}
+        className="rounded-2xl border border-neutral-200 bg-white p-6 dark:border-neutral-800 dark:bg-neutral-900 sm:p-8"
+      >
+        <div className="mb-4 inline-flex rounded-xl bg-accent-50 p-3 text-accent-600 dark:bg-accent-500/10 dark:text-accent-400">
+          <Radar className="h-6 w-6" />
+        </div>
+        <h3 className="text-lg font-semibold text-neutral-900 dark:text-white">
+          {context.title}
+        </h3>
+        <p className="mt-3 max-w-3xl text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+          {context.body}
+        </p>
+        <ul className="mt-5 grid gap-3 sm:grid-cols-3">
+          {context.bullets.map((item) => (
+            <li
+              key={item}
+              className="flex gap-2.5 rounded-xl border border-neutral-100 bg-neutral-50 px-4 py-3 text-sm leading-relaxed text-neutral-600 dark:border-neutral-800 dark:bg-neutral-950 dark:text-neutral-400"
+            >
+              <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-500" />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </motion.div>
+
+      <div className="mt-5 grid gap-5 lg:grid-cols-3">
+        {METHOD_BLOCKS.map(({ key, icon: Icon }, i) => {
           const block = t.contributions[key]
           return (
             <motion.div
