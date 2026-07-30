@@ -2,7 +2,7 @@ import type { Messages } from '../types'
 
 export const ko: Messages = {
   meta: {
-    title: 'Location Spoofing Detection — 위치 스푸핑 탐지 연구 데모',
+    title: 'Location Spoofing Detection: 위치 스푸핑 탐지 연구 데모',
     description:
       '차량 애드혹 네트워크(VANET)에서 차분 특징(differential feature)과 오토인코더(autoencoder) 프로파일링(profiling)으로 위치 스푸핑(location spoofing)을 탐지하는 인터랙티브 연구 데모.',
   },
@@ -32,7 +32,7 @@ export const ko: Messages = {
     badge: 'VANET security · 6G Security-by-Design',
     titleBefore: '차량 네트워크의 ',
     titleAccent: '위치 스푸핑(location spoofing)',
-    titleAfter: '을 잡아내는 법',
+    titleAfter: '을 잡아내는 방법에 관한 연구',
     subtitle:
       '연속된 안전 메시지(Basic Safety Message, BSM) 두 개만으로도 위조 GPS를 가려낸다. 차분 특징(differential feature) 몇 가지로 탐지 정확도는 최대 {accuracy}%까지 올랐다.',
     ctaAttacks: '공격 유형 보기',
@@ -46,7 +46,7 @@ export const ko: Messages = {
   },
   overview: {
     eyebrow: '아이디어',
-    title: '위치는 안전 신호다 — 그래서 무결성이 관건이다',
+    title: '위치는 안전 신호다. 그래서 무결성이 관건이다',
     subtitle:
       '차량 애드혹 네트워크(VANET)에서 위치는 충돌 회피·차선 변경 판단의 근거가 된다. 그 좌표를 속이면 바로 위험으로 이어진다. 이번 연구는 최소한의 정보만으로도 그런 위조를 안정적으로 잡는다.',
     cards: {
@@ -100,7 +100,7 @@ export const ko: Messages = {
   },
   contributions: {
     eyebrow: '연구 배경',
-    title: '정적 샘플만으로는 부족했다 — 2-시퀀스가 바꾼 결과',
+    title: '정적 샘플만으로는 부족했다. 2-시퀀스가 바꾼 결과',
     subtitle:
       '핵심은 새 모델만이 아니다. VeReMi 메시지를 2-시퀀스 학습 샘플로 다시 만들고 차분 특징을 설계한 뒤, 가벼운 분류기(classifier)로 보고된 정확도를 낸 데이터·특징 공학(feature engineering) 파이프라인이다.',
     prior: {
@@ -239,7 +239,7 @@ export const ko: Messages = {
     },
   },
   footer: {
-    left: 'Location Spoofing Detection — 인터랙티브 연구 데모.',
+    left: 'Location Spoofing Detection, 인터랙티브 연구 데모.',
     right: '기록된 실험 결과를 재구성 · VeReMi dataset.',
   },
 }
