@@ -28,6 +28,9 @@ export function AttackTypes() {
       title={t.attacks.title}
       subtitle={t.attacks.subtitle}
     >
+      <p className="mb-6 max-w-3xl text-sm leading-relaxed text-neutral-500 dark:text-neutral-400">
+        {t.attacks.typeIdNote}
+      </p>
       <div className="grid gap-8 lg:grid-cols-[320px_1fr]">
         <div className="flex flex-col gap-2">
           {attacks.map((a) => {
@@ -44,13 +47,13 @@ export function AttackTypes() {
                 }`}
               >
                 <span
-                  className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-lg font-mono text-sm font-bold ${
+                  className={`flex h-10 min-w-10 shrink-0 items-center justify-center rounded-lg px-1.5 font-mono text-[11px] font-bold leading-none ${
                     isActive
                       ? 'bg-accent-600 text-white'
                       : 'bg-neutral-100 text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400'
                   }`}
                 >
-                  {a.id}
+                  Type {a.id}
                 </span>
                 <span>
                   <span className="block font-semibold text-neutral-900 dark:text-white">
@@ -85,7 +88,7 @@ export function AttackTypes() {
               </div>
               <div>
                 <span className="inline-block rounded-md bg-neutral-100 px-2.5 py-1 font-mono text-xs font-semibold text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400">
-                  {t.attacks.typeLabel} = {active.id}
+                  {t.attacks.typeLabel} {active.id}
                 </span>
                 <h3 className="mt-3 text-2xl font-bold text-neutral-900 dark:text-white">
                   {active.name}

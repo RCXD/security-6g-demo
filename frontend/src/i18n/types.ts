@@ -86,6 +86,7 @@ export type Messages = {
     title: string
     subtitle: string
     typeLabel: string
+    typeIdNote: string
     items: Record<
       string,
       { name: string; short: string; description: string }

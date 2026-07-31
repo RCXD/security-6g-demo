@@ -161,6 +161,8 @@ export const es: Messages = {
     subtitle:
       'El benchmark VeReMi define cinco tipos de ataque de spoofing. Seleccione uno para ver cómo distorsiona la trayectoria reportada (azul = genuina, rojo = falsificada).',
     typeLabel: 'Tipo',
+    typeIdNote:
+      'Las etiquetas Type 1 / 2 / 4 / 8 / 16 son los IDs attackerType de VeReMi (potencias de dos), no un índice 1–5. Type 1 = Constant, Type 2 = Constant offset, Type 4 = Random, Type 8 = Random offset, Type 16 = Eventual stop (artículo VeReMi arXiv:1804.06701, Tabla 2).',
     items: {
       constant: {
         name: 'Constant',

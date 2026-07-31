@@ -160,6 +160,8 @@ export const ko: Messages = {
     subtitle:
       'VeReMi 벤치마크가 정의한 스푸핑(spoofing) 공격 다섯 가지입니다. 유형을 고르면 보고된 궤적이 어떻게 어긋나는지 확인하실 수 있습니다. 파랑은 정상, 빨강은 위조 궤적(spoofed track)입니다.',
     typeLabel: 'Type',
+    typeIdNote:
+      '카드의 Type 1 / 2 / 4 / 8 / 16은 목록 순번(1~5)이 아니라, VeReMi 원본 데이터셋의 attackerType ID입니다. 2의 거듭제곱으로 정의되어 있으며, Type 1=Constant, Type 2=Constant offset, Type 4=Random, Type 8=Random offset, Type 16=Eventual stop입니다(VeReMi 논문 arXiv:1804.06701, Table 2).',
     items: {
       constant: {
         name: 'Constant',

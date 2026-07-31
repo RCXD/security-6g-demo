@@ -64,7 +64,7 @@ export const ATTACK_TYPES: AttackType[] = [
     short: 'Fixed coordinate',
     description:
       'All spoofed messages report a single predefined coordinate (x=5560, y=5820), teleporting the vehicle to one fixed point.',
-    figure: 'figures/fig_000_cell6.png',
+    figure: 'figures/fig_001_cell6.png',
   },
   {
     id: 2,
@@ -73,7 +73,7 @@ export const ATTACK_TYPES: AttackType[] = [
     short: 'Fixed Δx, Δy shift',
     description:
       'The true position is shifted by a fixed offset (Δx=+250, Δy=-150) on every advertisement.',
-    figure: 'figures/fig_001_cell6.png',
+    figure: 'figures/fig_002_cell6.png',
   },
   {
     id: 4,
@@ -82,7 +82,7 @@ export const ATTACK_TYPES: AttackType[] = [
     short: 'Random position',
     description:
       'Coordinates are drawn at random from a large area, scattering the reported positions across the map.',
-    figure: 'figures/fig_002_cell6.png',
+    figure: 'figures/fig_003_cell6.png',
   },
   {
     id: 8,
@@ -91,7 +91,7 @@ export const ATTACK_TYPES: AttackType[] = [
     short: 'Random Δ shift',
     description:
       'Random offsets within [-β, +β] are added to the true coordinates, staying close to (but off) the genuine track.',
-    figure: 'figures/fig_003_cell6.png',
+    figure: 'figures/fig_004_cell6.png',
   },
   {
     id: 16,
@@ -100,7 +100,7 @@ export const ATTACK_TYPES: AttackType[] = [
     short: 'Frozen position',
     description:
       'The vehicle pretends to have stopped with increasing probability, freezing its position over time.',
-    figure: 'figures/fig_004_cell6.png',
+    figure: 'figures/fig_000_cell6.png',
   },
 ]
 
