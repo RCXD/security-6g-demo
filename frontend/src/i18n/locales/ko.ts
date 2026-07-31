@@ -140,7 +140,7 @@ export const ko: Messages = {
       bullets: [
         'MLP + Ext는 테스트 정확도 99.1%입니다. Basic 정적 특징은 91.4%였습니다.',
         'SVM은 Basic 63%에서 Ext 94.7%로 회복했습니다. 모델 선택보다 feature 설계가 더 결정적이라는 뜻입니다.',
-        '복원한 히트맵(heatmap)에서 Ext feature는 공격 변형 스윕(sweep) 평균 탐지율 98% 이상을 보입니다.',
+        '히트맵에서 Ext feature는 공격 변형 스윕(sweep) 평균 탐지율 98% 이상을 보입니다.',
       ],
     },
     pipeline: {
@@ -199,9 +199,9 @@ export const ko: Messages = {
     eyebrow: '실험 결과',
     title: '더 나은 feature, 훨씬 나은 탐지',
     subtitle:
-      'Basic feature(원시 좌표)에서 Ext 차분 특징으로 전환한 뒤의 성능 변화입니다. 어려운 공격일수록 격차가 크고, 수치는 기록된 실험 결과와 IEEE Access 2023 논문을 바탕으로 재구성했습니다.',
+      'Basic feature(원시 좌표)에서 Ext 차분 특징으로 전환한 뒤의 성능 변화입니다. 어려운 공격일수록 격차가 크고, 수치는 IEEE Access 2023에 보고된 실험 결과와 동일한 설정으로 다시 그렸습니다.',
     reconstructedNote:
-      '아래 차트·히트맵은 실험 노트북에서 복원한 자료입니다. 2-시퀀스 학습 과정을 보여 주기 위한 것이며, 출판사 figure의 복사본이 아닙니다. IEEE 논문은 DOI 링크만 제공합니다.',
+      '아래 차트와 히트맵은 IEEE Access 2023의 FIGURE 1–7을 데모용으로 재구현한 것입니다. 출판사 PDF를 그대로 올리지 않으며, 논문은 DOI로만 연결합니다.',
     accuracyTitle: '모델별 테스트 정확도(test accuracy)',
     basic: 'Basic',
     ext: 'Ext',
@@ -212,9 +212,42 @@ export const ko: Messages = {
     importanceTitle: '왜 먹히는가: 특징 중요도(feature importance, RF)',
     importanceNote:
       '네 가지 차분 특징(dᵗ, Dᵗy, Dᵗx, κᵗ, 파란색)이 대부분을 설명합니다. 그중 유클리드 이동 거리 dᵗ만으로도 약 40%입니다.',
-    heatmapTitle: '공격 변형에 대한 강건성 (복원 히트맵)',
+    paperGalleryTitle: 'IEEE Access 2023 — FIGURE 1–7',
+    paperGalleryBody:
+      '논문에 실린 figure 구성을 그대로 따라 파이썬으로 다시 그린 갤러리입니다. FIGURE 5·6은 Type 1 / Type 2 공격 변형에 대한 전체 히트맵(Basic·Ext × KNN/SVM/RF/XGB/MLP)입니다.',
+    paperFigures: {
+      fig1: {
+        title: 'FIGURE 1. 공격 유형별 위치 스푸핑 예시',
+        body: '파랑은 정상 좌표, 빨강은 위조 보고입니다. Type 1/2/4/8/16 각각의 왜곡 패턴을 한눈에 볼 수 있습니다.',
+      },
+      fig2: {
+        title: 'FIGURE 2. Basic feature set 검증·테스트 정확도',
+        body: '검증(validation)과 테스트 정확도를 모델별로 비교합니다. SVM은 양쪽 모두 약 63%로 크게 떨어집니다.',
+      },
+      fig3: {
+        title: 'FIGURE 3. Basic vs Ext 테스트 정확도',
+        body: 'Ext로 바꾸면 모든 모델이 올라가고, MLP는 99.1%까지 도달합니다. SVM 개선폭이 가장 큽니다.',
+      },
+      fig4: {
+        title: 'FIGURE 4. RF 특징 중요도',
+        body: '차분 특징 dᵗ, Dᵗx, Dᵗy, κᵗ가 Basic 좌표 특징보다 앞섭니다.',
+      },
+      fig5: {
+        title: 'FIGURE 5. Type 1 공격 변형에 대한 탐지율 히트맵',
+        body: 'αx·αy를 [-300, +300]에서 스윕한 결과입니다. 위 행은 Basic, 아래 행은 Ext입니다. 밝을수록 탐지율이 높습니다.',
+      },
+      fig6: {
+        title: 'FIGURE 6. Type 2 공격 변형에 대한 탐지율 히트맵',
+        body: '오프셋이 0에 가까울수록(정상점에 가까울수록) KNN·SVM이 더 흔들립니다. Ext에서는 MLP가 변형을 거의 완벽히 잡습니다.',
+      },
+      fig7: {
+        title: 'FIGURE 7. 오토인코더(autoencoder) 구조',
+        body: '인코더 φ가 입력을 잠재 공간으로 보내고, 디코더 ψ가 재구성합니다. 재구성 오차 ε가 큰 샘플을 스푸핑으로 판정합니다.',
+      },
+    },
+    heatmapTitle: '개별 히트맵 타일 (FIGURE 5·6 구성 요소)',
     heatmapBody:
-      '각 히트맵은 공격 파라미터(x·y offset)를 바꿔 가며 측정한 결과입니다. 밝을수록 탐지율이 높습니다. 실험 노트북에서 복원한 원본 결과입니다.',
+      '논문 FIGURE 5(Type 1)와 FIGURE 6(Type 2)을 이루는 모델별 히트맵입니다. Basic/Ext × 다섯 분류기 전부입니다.',
     tooltipAccuracy: '정확도',
     tooltipImportance: '중요도',
   },

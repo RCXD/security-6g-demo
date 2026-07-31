@@ -140,7 +140,7 @@ export const en: Messages = {
       bullets: [
         'MLP + Ext reaches 99.1% test accuracy vs. 91.4% with Basic static features.',
         'SVM recovers from 63% (Basic) to 94.7% (Ext) — the feature set matters more than the model choice.',
-        'Recovered heatmaps show >98% mean detection across attack-variation sweeps with Ext features.',
+        'Heatmaps show >98% mean detection across attack-variation sweeps with Ext features.',
       ],
     },
     pipeline: {
@@ -202,7 +202,7 @@ export const en: Messages = {
     subtitle:
       'Switching from the Basic features (raw coordinates) to the Ext differential features lifts every model — especially the hardest attack types. All numbers are reconstructed from the recorded experiment outputs and the IEEE Access 2023 paper.',
     reconstructedNote:
-      'Charts and heatmaps below are recovered from recorded experiment notebooks — illustrative of the 2-sequence training pipeline, not copies of publisher figures. IEEE articles are linked via DOI only.',
+      'Charts and heatmaps below recreate IEEE Access 2023 FIGURES 1–7 for this demo. Publisher PDFs are not hosted; papers are linked by DOI only.',
     accuracyTitle: 'Test accuracy by model',
     basic: 'Basic',
     ext: 'Ext',
@@ -213,9 +213,42 @@ export const en: Messages = {
     importanceTitle: 'Why it works: feature importance (RF)',
     importanceNote:
       'The four differential features (dᵗ, Dᵗy, Dᵗx, κᵗ, in blue) dominate — the Euclidean step distance dᵗ alone accounts for ~40%.',
-    heatmapTitle: 'Resilience to attack variations (recovered heatmaps)',
+    paperGalleryTitle: 'IEEE Access 2023 — FIGURES 1–7',
+    paperGalleryBody:
+      'Paper figure layouts rebuilt in Python for the demo. FIGURES 5–6 show the full Type 1 / Type 2 variation heatmaps (Basic & Ext × KNN/SVM/RF/XGB/MLP).',
+    paperFigures: {
+      fig1: {
+        title: 'FIGURE 1. Location spoofing examples by attack type',
+        body: 'Blue = genuine, red = spoofed. One panel per VeReMi Type 1 / 2 / 4 / 8 / 16.',
+      },
+      fig2: {
+        title: 'FIGURE 2. Basic feature set — validation vs test',
+        body: 'Validation vs test accuracy by model. SVM stays near 63% on both splits.',
+      },
+      fig3: {
+        title: 'FIGURE 3. Basic vs Ext test accuracy',
+        body: 'Ext lifts every model; MLP reaches 99.1%. SVM sees the largest absolute gain.',
+      },
+      fig4: {
+        title: 'FIGURE 4. RF feature importance',
+        body: 'Differential features dᵗ, Dᵗx, Dᵗy, κᵗ outrank Basic coordinate features.',
+      },
+      fig5: {
+        title: 'FIGURE 5. Detection heatmaps under Type 1 variations',
+        body: 'Sweep αx, αy over [-300, +300]. Top row Basic, bottom row Ext. Lighter = higher detection.',
+      },
+      fig6: {
+        title: 'FIGURE 6. Detection heatmaps under Type 2 variations',
+        body: 'Offsets near zero hurt KNN/SVM more. With Ext, MLP detects variations almost perfectly.',
+      },
+      fig7: {
+        title: 'FIGURE 7. Autoencoder architecture',
+        body: 'Encoder φ maps to a latent space; decoder ψ reconstructs. Large reconstruction error ε flags spoofing.',
+      },
+    },
+    heatmapTitle: 'Individual heatmap tiles (FIGURE 5–6 components)',
     heatmapBody:
-      "Each heatmap sweeps an attack's parameters (offset in x and y). Lighter = higher detection rate. These are the original result heatmaps recovered from the experiment notebook.",
+      'Per-model heatmaps that make up paper FIGURE 5 (Type 1) and FIGURE 6 (Type 2) — full Basic/Ext × five classifiers.',
     tooltipAccuracy: 'Accuracy',
     tooltipImportance: 'Importance',
   },

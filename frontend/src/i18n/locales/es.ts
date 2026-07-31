@@ -202,7 +202,7 @@ export const es: Messages = {
     subtitle:
       'Pasar de las características Basic (coordenadas crudas) a Ext (diferenciales) mejora todos los modelos — especialmente en los ataques más difíciles. Las cifras se reconstruyeron a partir de las salidas experimentales registradas y del artículo IEEE Access 2023.',
     reconstructedNote:
-      'Los gráficos y mapas de calor se recuperaron de cuadernos experimentales — ilustran el pipeline de entrenamiento en 2 secuencias, no son copias de figuras del editor. Los artículos IEEE solo enlazan por DOI.',
+      'Los gráficos y mapas de calor recrean las FIGURAS 1–7 de IEEE Access 2023 para esta demo. No se alojan PDF del editor; los artículos se enlazan solo por DOI.',
     accuracyTitle: 'Precisión de prueba por modelo',
     basic: 'Basic',
     ext: 'Ext',
@@ -213,9 +213,42 @@ export const es: Messages = {
     importanceTitle: 'Por qué funciona: importancia de características (RF)',
     importanceNote:
       'Las cuatro características diferenciales (dᵗ, Dᵗy, Dᵗx, κᵗ, en azul) dominan — la distancia euclidiana dᵗ sola explica ~40%.',
-    heatmapTitle: 'Resiliencia a variaciones del ataque (mapas de calor recuperados)',
+    paperGalleryTitle: 'IEEE Access 2023 — FIGURES 1–7',
+    paperGalleryBody:
+      'Composición de figuras del artículo recreada en Python. FIGURES 5–6 muestran todos los mapas de calor de variación Type 1 / Type 2 (Basic y Ext × KNN/SVM/RF/XGB/MLP).',
+    paperFigures: {
+      fig1: {
+        title: 'FIGURE 1. Ejemplos de spoofing por tipo de ataque',
+        body: 'Azul = genuino, rojo = falsificado. Un panel por Type 1 / 2 / 4 / 8 / 16 de VeReMi.',
+      },
+      fig2: {
+        title: 'FIGURE 2. Basic — validación vs prueba',
+        body: 'Precisión de validación y prueba por modelo. SVM se queda cerca del 63% en ambos.',
+      },
+      fig3: {
+        title: 'FIGURE 3. Basic vs Ext (prueba)',
+        body: 'Ext mejora todos los modelos; MLP llega al 99.1%. SVM tiene la mayor ganancia absoluta.',
+      },
+      fig4: {
+        title: 'FIGURE 4. Importancia de características (RF)',
+        body: 'Las características diferenciales dᵗ, Dᵗx, Dᵗy, κᵗ superan a las de Basic.',
+      },
+      fig5: {
+        title: 'FIGURE 5. Mapas de calor bajo variaciones Type 1',
+        body: 'Barrido de αx, αy en [-300, +300]. Fila superior Basic, inferior Ext. Más claro = mejor detección.',
+      },
+      fig6: {
+        title: 'FIGURE 6. Mapas de calor bajo variaciones Type 2',
+        body: 'Offsets cerca de cero afectan más a KNN/SVM. Con Ext, MLP detecta casi a la perfección.',
+      },
+      fig7: {
+        title: 'FIGURE 7. Arquitectura del autoencoder',
+        body: 'El encoder φ proyecta al espacio latente; el decoder ψ reconstruye. Un error ε grande marca spoofing.',
+      },
+    },
+    heatmapTitle: 'Baldosas individuales (componentes FIGURE 5–6)',
     heatmapBody:
-      'Cada mapa de calor barre parámetros del ataque (offset en x e y). Más claro = mayor tasa de detección. Son los mapas originales recuperados del notebook experimental.',
+      'Mapas por modelo que componen FIGURE 5 (Type 1) y FIGURE 6 (Type 2): Basic/Ext × cinco clasificadores.',
     tooltipAccuracy: 'Precisión',
     tooltipImportance: 'Importancia',
   },

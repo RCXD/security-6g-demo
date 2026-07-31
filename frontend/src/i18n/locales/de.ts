@@ -202,7 +202,7 @@ export const de: Messages = {
     subtitle:
       'Der Wechsel von Basic-Merkmalen (Rohkoordinaten) zu Ext-Differenzialmerkmalen verbessert jedes Modell — besonders bei schwierigen Angriffstypen. Alle Zahlen wurden aus aufgezeichneten Experimentausgaben und dem IEEE-Access-2023-Artikel rekonstruiert.',
     reconstructedNote:
-      'Diagramme und Heatmaps stammen aus aufgezeichneten Experiment-Notebooks — sie illustrieren die 2-Sequenz-Trainingspipeline, keine Verlagsabbildungen. IEEE-Artikel nur per DOI verlinkt.',
+      'Diagramme und Heatmaps unten sind Neuumsetzungen der IEEE-Access-2023-FIGUREN 1–7 für diese Demo. Verlags-PDFs werden nicht gehostet; Artikel nur per DOI verlinkt.',
     accuracyTitle: 'Testgenauigkeit nach Modell',
     basic: 'Basic',
     ext: 'Ext',
@@ -213,9 +213,42 @@ export const de: Messages = {
     importanceTitle: 'Warum es funktioniert: Merkmalswichtigkeit (RF)',
     importanceNote:
       'Die vier differenziellen Merkmale (dᵗ, Dᵗy, Dᵗx, κᵗ, in Blau) dominieren — allein die euklidische Schrittweite dᵗ erklärt ~40 %.',
-    heatmapTitle: 'Robustheit gegenüber Angriffsvariationen (rekonstruierte Heatmaps)',
+    paperGalleryTitle: 'IEEE Access 2023 — FIGUREN 1–7',
+    paperGalleryBody:
+      'Papierfiguren in Python neu aufgebaut. FIGUREN 5–6 zeigen die vollständigen Type-1-/Type-2-Variations-Heatmaps (Basic & Ext × KNN/SVM/RF/XGB/MLP).',
+    paperFigures: {
+      fig1: {
+        title: 'FIGURE 1. Location-Spoofing-Beispiele nach Angriffstyp',
+        body: 'Blau = echt, rot = gefälscht. Ein Panel je VeReMi Type 1 / 2 / 4 / 8 / 16.',
+      },
+      fig2: {
+        title: 'FIGURE 2. Basic — Validierung vs. Test',
+        body: 'Validierungs- und Testgenauigkeit nach Modell. SVM bleibt bei ca. 63 %.',
+      },
+      fig3: {
+        title: 'FIGURE 3. Basic vs Ext (Test)',
+        body: 'Ext verbessert jedes Modell; MLP erreicht 99,1 %. SVM hat den größten Zugewinn.',
+      },
+      fig4: {
+        title: 'FIGURE 4. RF-Merkmalswichtigkeit',
+        body: 'Differenzielle Merkmale dᵗ, Dᵗx, Dᵗy, κᵗ liegen vor Basic-Koordinatenmerkmalen.',
+      },
+      fig5: {
+        title: 'FIGURE 5. Erkennungs-Heatmaps bei Type-1-Variationen',
+        body: 'Sweep von αx, αy über [-300, +300]. Obere Reihe Basic, untere Ext. Heller = bessere Erkennung.',
+      },
+      fig6: {
+        title: 'FIGURE 6. Erkennungs-Heatmaps bei Type-2-Variationen',
+        body: 'Offsets nahe null treffen KNN/SVM stärker. Mit Ext erkennt MLP Variationen nahezu perfekt.',
+      },
+      fig7: {
+        title: 'FIGURE 7. Autoencoder-Architektur',
+        body: 'Encoder φ mappt in den latenten Raum; Decoder ψ rekonstruiert. Großes Rekonstruktionsfehler ε markiert Spoofing.',
+      },
+    },
+    heatmapTitle: 'Einzelne Heatmap-Kacheln (Komponenten FIGURE 5–6)',
     heatmapBody:
-      'Jede Heatmap durchläuft Angriffsparameter (Offset in x und y). Heller = höhere Erkennungsrate. Dies sind die Original-Heatmaps aus dem Experiment-Notebook.',
+      'Pro-Modell-Heatmaps für FIGURE 5 (Type 1) und FIGURE 6 (Type 2) — vollständig Basic/Ext × fünf Klassifikatoren.',
     tooltipAccuracy: 'Genauigkeit',
     tooltipImportance: 'Wichtigkeit',
   },

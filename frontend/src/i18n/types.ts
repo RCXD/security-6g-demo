@@ -104,6 +104,12 @@ export type Messages = {
     accuracyBasicNote: string
     importanceTitle: string
     importanceNote: string
+    paperGalleryTitle: string
+    paperGalleryBody: string
+    paperFigures: Record<
+      'fig1' | 'fig2' | 'fig3' | 'fig4' | 'fig5' | 'fig6' | 'fig7',
+      { title: string; body: string }
+    >
     heatmapTitle: string
     heatmapBody: string
     tooltipAccuracy: string

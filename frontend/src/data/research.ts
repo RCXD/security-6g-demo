@@ -185,3 +185,57 @@ export const TEAM: TeamMember[] = [
 
 export const FUNDING =
   'Supported in part by IITP (Korea, MSIT): “Research on Foundational Technologies for 6G Autonomous Security-by-Design to Guarantee Constant Quality of Security”, Grant 2021-0-00796.'
+
+/** IEEE Access 2023 paper figures, rebuilt for the demo (tools/rebuild_paper_figures.py). */
+export type PaperFigure = {
+  id: string
+  fig: number
+  file: string
+  titleKey: string
+}
+
+export const PAPER_FIGURES: PaperFigure[] = [
+  {
+    id: 'fig1',
+    fig: 1,
+    file: 'figures/paper/fig1_attack_types.png',
+    titleKey: 'fig1',
+  },
+  {
+    id: 'fig2',
+    fig: 2,
+    file: 'figures/paper/fig2_basic_accuracy.png',
+    titleKey: 'fig2',
+  },
+  {
+    id: 'fig3',
+    fig: 3,
+    file: 'figures/paper/fig3_basic_vs_ext.png',
+    titleKey: 'fig3',
+  },
+  {
+    id: 'fig4',
+    fig: 4,
+    file: 'figures/paper/fig4_feature_importance.png',
+    titleKey: 'fig4',
+  },
+  {
+    id: 'fig5',
+    fig: 5,
+    file: 'figures/paper/fig5_type1_variations.png',
+    titleKey: 'fig5',
+  },
+  {
+    id: 'fig6',
+    fig: 6,
+    file: 'figures/paper/fig6_type2_variations.png',
+    titleKey: 'fig6',
+  },
+  {
+    id: 'fig7',
+    fig: 7,
+    file: 'figures/paper/fig7_autoencoder.png',
+    titleKey: 'fig7',
+  },
+]
+
